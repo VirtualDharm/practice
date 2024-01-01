@@ -1,14 +1,17 @@
 import React from 'react'
 import './App.css';
 function App() {
-  const [show, setShow] = React.useState(true);
+  const [value, setValue] = React.useState("");
 
   return (
     <>
-      <button onClick={() => setShow(!show)}>
-        {show ? "Hide Element Below" : "Show Element Below"}
-      </button>
-      {show && <div>Toggle Challenge</div>}
+      <input
+        type="text"
+        placeholder="Enter Text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        />
+      <p>{value}</p>
     </>
   );
 }
