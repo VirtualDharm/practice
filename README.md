@@ -1,1 +1,39 @@
 # I daily practice JS && React questions. Thus, I thought of keeping record for later use.
+questions: done
+Arrays===================>
+Subarray with given sum
+Count the triplets
+Kadane’s Algorithm
+Missing number in array
+Merge two sorted arrays
+Rearrange array alternatively
+Number of pairs
+Inversion of Array
+Sort an array of 0s, 1s and 2s
+Equilibrium point
+Leaders in an array
+Minimum Platforms
+Reverse array in groups
+K’th smallest element
+Trapping Rain Water
+Pythagorean Triplet
+Chocolate Distribution Problem
+Stock buy and sell
+String===================>All done
+Reverse words in a given string
+Permutations of a given string
+Longest Palindrome in a String
+Recursively remove all adjacent duplicates
+Check if string is rotated by two places
+Roman Number to Integer
+Anagram
+Remove Duplicates
+Form a Palindrome
+Longest Distinct Characters in the string
+Implement Atoi
+Implement strstr
+Longest Common Prefix
+Stack and Queue =======================>
+Parenthesis Checker
+Next larger element
+Queue using two Stacks
