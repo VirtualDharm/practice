@@ -1,17 +1,17 @@
 import React from 'react'
 import './App.css';
 function App() {
-  const [value, setValue] = React.useState("");
+  const [value,setValue] = React.useState("");
 
   return (
     <>
-      <input
+      <h3>Disable Button Challenge</h3>
+      <input 
         type="text"
-        placeholder="Enter Text"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        />
-      <p>{value}</p>
+        onChange={(e)=>setValue(e.target.value)
+        }/>
+      {value&&<button>Submit</button>}
     </>
   );
 }
