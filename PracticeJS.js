@@ -33,4 +33,22 @@
 // N1=5
 // Arr1=[4,2,2,2,4]
 // stockBuySell(Arr1,N1)
+// #########################################################
+// Convert array into Zig-Zag fashion
+// function zigZag(arr,n){
+//     arr=arr.slice()
+//     arr.sort((a,b)=>a-b)
+//     for(i=0;i<n/2;i=i+2){
+//         temp=arr[i+1]
+//         arr[i+1]=arr[n-i-1]
+//         arr[n-i-1]=temp
+//         console.log(arr[i+1],arr[n-i-1])
+//     }
+//     console.log(arr)
+// }
+// Arr=[4, 3, 7, 8, 6, 2, 1]
+// zigZag(Arr,7)
+// Arr1=[1, 4, 3, 2]
+// zigZag(Arr1,4)
+// #######################################################
 
