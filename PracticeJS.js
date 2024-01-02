@@ -139,4 +139,29 @@
 // Arr1=[1,2,2,2,1,4]
 // twoIntoOne(Arr1)
 // #################################################################
+// Maximum of all subarrays of size k
+// function max_of_subarrays(arr,n,k){
+//     let i = 0
+//     let check = new Array
+//     for(i=0;i<n-k+1;i++){
+//         check.push(arr.slice(i,i+3))
+//     }
+//     for(i=0;i<check.length;i++){
+//         max=check[i][0]
+//         for(j=1;j<k;j++){
+//             if(check[i][j]>max){
+//                 max=check[i][j]
+//             }
+//         }
+//         console.log(max)
+//     }
+// }
+// N = 9, K = 3
+// Arr = [1,2,3,1,4,5,2,3,6]
+// max_of_subarrays(Arr,N,K)// 3 3 4 5 5 5 6
+// N1 = 10, K1 = 4
+// Arr1 = [8,5,10,7,9,4,15,12,90,13]
+// max_of_subarrays(Arr1,N1,K1)// 10 10 10 15 15 90 90
+// ######################################################################
+
 
