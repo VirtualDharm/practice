@@ -112,3 +112,31 @@
 // let arr2 = [54, 546, 548, 60];
 // console.log(printLargest(arr2)); // Output: 6054854654
 // ##########################################################
+// Queue using two Stacks
+// function twoIntoOne(arr){
+//     let i = 0,tm
+//     let result = new Array
+//     let temp = new Array
+//     while(arr[i]){
+//         if(arr[i]==1){
+//             result.push(arr[i+1])
+//             i++
+//         }else if(arr[i]==2){
+//             tm = result.pop()
+//             if(String(tm).localeCompare('undefined')==0){
+//                 temp.push(-1)
+//             }
+//             else{
+//                 temp.push(tm)
+//             }
+//         }
+//         i++
+//     }
+//     console.log(temp)
+// }
+// Arr=[1,2,1,3,2,1,4,2]
+// twoIntoOne(Arr)
+// Arr1=[1,2,2,2,1,4]
+// twoIntoOne(Arr1)
+// #################################################################
+
