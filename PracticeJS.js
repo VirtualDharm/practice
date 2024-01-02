@@ -97,3 +97,18 @@
 // ];
 // console.log(spirallyTraverse(matrix2, 3, 4));
 // #######################################################
+// Largest Number formed from an Array
+// function printLargest(arr) {
+//     arr.sort((a, b) => {
+//         let ab = String(a) + String(b);
+//         let ba = String(b) + String(a);
+//         return ba.localeCompare(ab);
+//     });
+//     console.log(arr)
+//     return arr.join('');
+// }
+// let arr1 = [3, 30, 34, 5, 9];
+// console.log(printLargest(arr1)); // Output: 9534330
+// let arr2 = [54, 546, 548, 60];
+// console.log(printLargest(arr2)); // Output: 6054854654
+// ##########################################################
