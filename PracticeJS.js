@@ -163,5 +163,24 @@
 // Arr1 = [8,5,10,7,9,4,15,12,90,13]
 // max_of_subarrays(Arr1,N1,K1)// 10 10 10 15 15 90 90
 // ######################################################################
-
+// Number of paths
+// function numberOfPaths(x, y, m, n) {
+//     if (x === m - 1 && y === n - 1) {
+//         return 1;
+//     }
+//     let paths = 0;
+//     if (y + 1 < n) {
+//         paths += numberOfPaths(x, y + 1, m, n);
+//     }
+//     if (x + 1 < m) {
+//         paths += numberOfPaths(x + 1, y, m, n);
+//     }
+//     return paths;
+// }
+// // Example usage:
+// const M = 3, N = 3;
+// console.log(numberOfPaths(0, 0, M, N));  // Output: 6
+// const M1 = 4, N1 = 5;
+// console.log(numberOfPaths(0, 0, M1, N1));  // Output: 35
+// ##############################################################
 
