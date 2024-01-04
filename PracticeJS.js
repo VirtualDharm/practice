@@ -183,4 +183,34 @@
 // const M1 = 4, N1 = 5;
 // console.log(numberOfPaths(0, 0, M1, N1));  // Output: 35
 // ##############################################################
+// Combination Sum II
+// function combinationSum2(arr, N, K) {
+//     const result = [];
+//     const currentCombination = [];
+//     arr.sort((a, b) => a - b); 
+//     backtrack(0, K);
+//     return result;
+//     function backtrack(startIndex, target) {
+//         if (target === 0) {
+//             result.push([...currentCombination]);
+//             return;
+//         }
+//         for (let i = startIndex; i < N; i++) {
+//             if (i > startIndex && arr[i] === arr[i - 1]) {
+//                 continue;
+//             }
+//             if (arr[i] > target) {
+//                 break;
+//             }
+//             currentCombination.push(arr[i]);
+//             backtrack(i + 1, target - arr[i]);
+//             currentCombination.pop();
+//         }
+//     }
+// }
+// const arr1 = [1, 2, 3, 3, 5];
+// console.log(combinationSum2(arr1,5,7));
+// const arr2 = [5, 10, 15, 20, 25, 30];
+// console.log(combinationSum2(arr2,6,35));
+// ##################################################################
 
