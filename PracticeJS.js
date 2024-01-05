@@ -212,5 +212,21 @@
 // console.log(combinationSum2(arr1,5,7));
 // const arr2 = [5, 10, 15, 20, 25, 30];
 // console.log(combinationSum2(arr2,6,35));
-// ##################################################################
+// ###################################################################
+// Special Keyboard
+// function optimalKeys(N){
+//     if(N<=6){
+//         return N
+//     }
+//     let dp = new Array(N + 1).fill(0)
+//     for (let i = 7; i <= N; i++) {
+//         for (let j = 1; j <= i - 3; j++) {
+//             dp[i] = Math.max(dp[i], (i - j - 1) * dp[j]);
+//         }
+//     }
+//   return dp[N];
+// }
+// console.log(optimalKeys(3)); // Output: 3
+// console.log(optimalKeys(7)); // Output: 9
+// ###################################################################
 
