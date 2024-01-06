@@ -44,3 +44,5 @@ LRU Cache
 Circular tour
 Rotten Oranges
 Flood fill Algorithm(Recursion)
+
+No practice on 6th January 2024
