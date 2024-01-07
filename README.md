@@ -46,3 +46,4 @@ Rotten Oranges
 Flood fill Algorithm(Recursion)
 
 No practice on 6th January 2024
+No practice on 7th January 2024
