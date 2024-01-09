@@ -229,4 +229,37 @@
 // console.log(optimalKeys(3)); // Output: 3
 // console.log(optimalKeys(7)); // Output: 9
 // ###################################################################
+// Finding middle element in a linked list
+// class listNode{
+//     constructor(data){
+//         this.data=data;
+//         this.next=null;
+//     }
+// }
+// function getMiddle(head){
+//     if(!head){
+//         return
+//     }
+//     let slow = head
+//     let fast = head
+//     while(fast!==null&&fast.next!==null){
+//         slow=slow.next
+//         fast=fast.next.next
+//     }
+//     return slow.data
+// }
+// let head = new listNode(1)
+// head.next = new listNode(2)
+// head.next.next = new listNode(3)
+// head.next.next.next = new listNode(4)
+// head.next.next.next.next = new listNode(5)
+// console.log(getMiddle(head))
+// let head1 = new listNode(2)
+// head1.next = new listNode(4)
+// head1.next.next = new listNode(6)
+// head1.next.next.next = new listNode(7)
+// head1.next.next.next.next = new listNode(5)
+// head1.next.next.next.next.next = new listNode(1)
+// console.log(getMiddle(head1))
+// ################################################################
 
