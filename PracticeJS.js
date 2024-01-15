@@ -261,5 +261,42 @@
 // head1.next.next.next.next = new listNode(5)
 // head1.next.next.next.next.next = new listNode(1)
 // console.log(getMiddle(head1))
-// ################################################################
+// ###################################################################
+// Sort an array according to the other
+// let res = new Array
+// function checkAnother(a,arr){
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i]==a){
+//             res.push(a)
+//         }
+//     }
+// }
+// function sortA1ByA2(arr,arr1,n,m){
+//     let i,j
+//     let res1 = new Array
+//     for(i=0;i<n;i++){
+//         if(arr1.includes(arr[i])){
+//             if(!res.includes(arr[i]),arr[i]){
+//                 res.push(arr[i])
+//                 rem=arr.slice(i+1,n)
+//                 if(rem.length>0){
+//                     checkAnother(arr[i],rem)
+//                 }
+//             }
+//         }else{
+//             res1.push(arr[i])
+//         }
+//     }
+//     res1.sort((a,b)=>a-b)
+//     res=[...res,...res1]
+//     return res
+// }
+// A1 = [2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8]
+// A2 = [2, 1, 8, 3]
+// console.log(sortA1ByA2(A1,A2,11,4)) //2 2 1 1 8 8 3 5 6 7 9
+// A3 = [2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8]
+// A4 = [99, 22, 444, 56]
+// res = []
+// console.log(sortA1ByA2(A3,A4,11,4)) //1 1 2 2 3 5 6 7 8 8 9
+// ####################################################################
 

@@ -1,13 +1,34 @@
 import React from 'react'
+const url = "https://jsonplaceholder.typicode.com/users/1";
 
 function App() {
-  const [count,setCount] = React.useState(0);
+  const [userData, setUserData] = React.useState({});
+
+  const getUserData = async () => {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    setUserData(jsonData);
+  };
+  React.useEffect(() => {
+    getUserData();
+  }, []);
 
   return (
-    <div>
-      <h2>Counter: {count}</h2>
-      <button onClick={()=>setCount(count+1)}>Increment</button>
-      <button onClick={()=>setCount(count-1)}>Decrement</button>
+    <div className="App">
+      <h2>User Data</h2>
+
+      <p>
+        <strong>Name:</strong> {userData.name}
+      </p>
+      <p>
+        <strong>Website:</strong> {userData.website}
+      </p>
+      <p>
+        <strong>Email:</strong> {userData.email}
+      </p>
+      <p>
+        <strong>Phone:</strong> {userData.phone}
+      </p>
     </div>
   );
 }
