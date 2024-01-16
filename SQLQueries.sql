@@ -17,3 +17,26 @@ where admission_date = discharge_date
 select patient_id, count(admission_date)
 from admissions
 where patient_id = 579
+SELECT distinct(city) 
+FROM patients
+where province_id = 'NS'
+select first_name,last_name,birth_date
+from patients
+where height > 160 and weight > 70
+select first_name,last_name,allergies
+from patients
+where allergies is not NULL and city = 'Hamilton'
+select distinct(YEAR(birth_date))
+from patients
+order by birth_date
+select first_name
+from patients
+group by first_name
+HAVING COUNT(first_name) = 1
+select patient_id,first_name
+from patients
+where first_name like 's%s' and len(first_name)>5
+select p.patient_id,p.first_name,p.last_name
+from patients p
+join admissions a on p.patient_id = a.patient_id
+where a.diagnosis = 'Dementia'

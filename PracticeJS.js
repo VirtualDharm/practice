@@ -299,4 +299,35 @@
 // res = []
 // console.log(sortA1ByA2(A3,A4,11,4)) //1 1 2 2 3 5 6 7 8 8 9
 // ####################################################################
+// ####################################################################
+// Sorting Elements of an Array by Frequency
+// function frequencySort(t,arr){
+//     for(let i=0;i<t;i++){
+//         let newarr = new Array
+//         let resMap = new Map()
+//         n=arr[i][0]
+//         newarr=arr[i][1]
+//         for(let j=0;j<n;j++){
+//             if(resMap.has(newarr[j])){
+//                 resMap.set(newarr[j],resMap.get(newarr[j])+1)
+//             }else{
+//                 resMap.set(newarr[j],1)
+//             }
+//         }
+//         arr.sort((a,b)=>{
+//             if(resMap.get(a)!==resMap.get(b)){
+//                 return resMap(b)-resMap(a)
+//             }
+//             return a-b
+//         })
+//         console.log(resMap)
+//     }
+// }
+// n=2
+// arr=[
+//     [5,[5,5,4,6,4]],
+//     [5,[9,9,9,2,5]]
+// ]
+// frequencySort(n,arr)
+// ##################################################################
 
