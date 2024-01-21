@@ -40,3 +40,8 @@ select p.patient_id,p.first_name,p.last_name
 from patients p
 join admissions a on p.patient_id = a.patient_id
 where a.diagnosis = 'Dementia'
+SELECT allergies, COUNT(*) as allergy_count
+FROM your_table_name
+WHERE allergies IS NOT NULL
+GROUP BY allergies
+ORDER BY allergy_count DESC
