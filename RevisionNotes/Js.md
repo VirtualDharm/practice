@@ -18,5 +18,12 @@ it is an object representing the eventual completion or failure of an asynchrono
 it is a new addition to ES2017 which is syntactic sugar on top of promises and make asynchronous code look synchronous code
 # AJAX
 send data to the server and get data without refreshing the page.
-# DOM: Document Object Model, 
-
+# DOM: Document Object Model
+# Regex:
+Regular expressions can be used to perform all types of text search and text replace operations.
+# Syntax: /pattern/modifiers;
+// Case-insensitive(i), global search(g) with optional multiline(m) support
+// Character ranges using brackets [abc]; [0-9]; 
+// Alternatives using | (x|y); 
+// Metacharacters for digits, whitespace, word boundaries, and Unicode characters \d; \s; \b; \uxxxx; 
+// Quantifiers for one or more, zero or more, and zero or one occurrences n+; n*; n?;
