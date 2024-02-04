@@ -1,6 +1,3 @@
-# function reverseString(str) {
-    return str.split("").reverse().join("");
-}
 # function removeDuplicates(array) {
   return [...new Set(array)]
 }
