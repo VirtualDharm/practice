@@ -10,7 +10,7 @@ Merge two sorted arrays
 Rearrange array alternatively
 Number of pairs
 Inversion of Array
-Sort an array of 0s, 1s and 2s
+Sort an array of 0s, 1s and 2s. 
 Equilibrium point
 Leaders in an array
 Minimum Platforms
