@@ -40,7 +40,6 @@ it is a new addition to ES2017 which is syntactic sugar on top of promises and m
 # JS : scripting/interpret language
 # AJAX
 send data to the server and get data without refreshing the page.
-# DOM: Document Object Model
 # Regex:
 Regular expressions can be used to perform all types of text search and text replace operations.
 # Syntax: /pattern/modifiers;
