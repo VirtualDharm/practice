@@ -121,6 +121,7 @@ HOC can be used for many use cases:
 * Showing a loader while a component waits for data.
 # What is children prop?
 It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.
+Pros are immutable while the state is mutable. Both of them can update themselves easily.
 ```javascript
 const MyComponent = ({title, children}) => {
   return (
@@ -163,3 +164,58 @@ this.setState((prevState) => ({
   counter: prevState.counter + 1
 })) 
 ```
+# Top 50 React questions: 
+# Redux : 
+A method of handling the state (or data) of an application. it is a predictable state container for JavaScript applications, commonly used with libraries like React for building user interfaces. It helps manage the state of an application in a more organized and predictable way.
+
+Key Concepts:
+* Store: Redux stores the entire state of your application in a single JavaScript object called the store. This makes it easy to access and manage the state from anywhere in your application.
+* Actions: Actions are plain JavaScript objects that represent "what happened" in your application. They describe the intention to change the state and are the only way to send data to the Redux store.
+* Reducers: Reducers are pure functions that specify how the application's state changes in response to actions sent to the store. They take the previous state and an action as arguments, and return the next state.
+* Dispatch: Dispatch is a method provided by the store that allows you to send actions to the Redux store. When an action is dispatched, it triggers the corresponding reducer to update the state.
+
+Workflow:
+* Action Creation: You define action creators, which are functions that create and return action objects. These action objects typically have a type field to indicate the type of action and optionally a payload field to carry data.
+* Dispatching Actions: When some event occurs in your application (like a button click), you dispatch an action using the dispatch method provided by the Redux store.
+* Reducer Handling: Reducers specify how the state should change in response to dispatched actions. They take the current state and an action as arguments, and return the next state based on the action type.
+* Updating State: The Redux store applies the reducer functions to the current state and the dispatched action, producing a new state. This new state is then stored in the Redux store, replacing the previous state.
+
+Benefits:
+* Predictability: Redux makes state changes predictable and transparent by following strict principles and patterns.
+* Debugging: It provides powerful debugging tools, such as Redux DevTools, which allow you to track state changes over time.
+* Testability: Redux promotes writing testable code by separating state logic from presentation components.
+
+In summary, Redux provides a centralized and predictable way to manage the state of JavaScript applications, making it easier to develop, debug, and test complex applications.
+
+# Redux Thunk :
+It is a middleware for Redux that allows you to write action creators that return functions instead of plain objects.
+
+Here's a quick breakdown:
+* What is Redux Thunk?
+Redux Thunk helps handle asynchronous actions in Redux. It lets action creators return functions instead of plain action objects.
+
+* Why use Redux Thunk?
+It's handy for tasks like fetching data from an API, where you need to wait for an async operation to complete before dispatching an action.
+
+* How does it work?
+Instead of returning an action object directly, your action creator returns a function. This function receives dispatch and getState as arguments, allowing you to dispatch actions conditionally or after async operations.
+
+```javascript
+// Action creator using Redux Thunk
+export const fetchData = () => {
+  return (dispatch, getState) => {
+    dispatch(fetchDataRequest()); // Dispatching an action to indicate start of data fetching
+    // Async operation (e.g., fetching data from an API)
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => {
+        dispatch(fetchDataSuccess(data)); // Dispatching success action with fetched data
+      })
+      .catch(error => {
+        dispatch(fetchDataFailure(error)); // Dispatching failure action with error
+      });
+  };
+};
+```
+In this example, fetchData returns a function that receives dispatch and getState. Inside this function, you can dispatch actions based on async operation results, like fetching data from an API.
+To use Redux Thunk, you need to apply it as middleware when creating the Redux store.
