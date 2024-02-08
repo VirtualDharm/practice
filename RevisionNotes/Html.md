@@ -9,3 +9,7 @@ Session Storage stores data of the current session. Data stored in session stora
 Local Storage data is not deleted automatically when the current browser window is closed.
 # Data attribute: 
 lets you assign custom data to an element to store more information or data when no suitable HTML5 element or attribute exists.
+
+# Top 50 Html questions:
+# image map : 
+It helps link different kinds of web pages using a single image. The image map can be used for defining shapes in the images that are made part of the image mapping process.
