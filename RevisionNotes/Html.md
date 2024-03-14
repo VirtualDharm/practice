@@ -12,7 +12,7 @@ lets you assign custom data to an element to store more information or data when
 
 # Top 50 Html questions:
 # image map : 
-It helps link different kinds of web pages using a single image. The image map can be used for defining shapes in the images that are made part of the image mapping process.\n
+It helps link different kinds of web pages using a single image. The image map can be used for defining shapes in the images that are made part of the image mapping process.  
 links to different sections within the same web page by using the <a> tag along and using the # symbol.
 Applets are small programs that are embedded with web pages like animation.
 # Marquee:
