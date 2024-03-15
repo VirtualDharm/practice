@@ -1,28 +1,28 @@
 <!-- html.md -->
-# HTML Entities
+## HTML Entities
 HTML entities are special codes used to represent reserved or invisible characters in HTML. They begin with an ampersand (`&`) and end with a semicolon (`;`). For example, "`<`" & "`>`", "`&nsbp`".
 
-# Semantic Elements
+## Semantic Elements
 Semantic elements in HTML convey meaning about the structure and content of a webpage. Examples include `<header>`, `<article>`, and `<footer>`.
 
-# Meta Tags
+## Meta Tags
 Meta tags provide brief descriptions of webpage content to search engines and web crawlers, which use these tags to understand and categorize the content.
 
-# Session Storage vs Local Storage
+## Session Storage vs Local Storage
 Session Storage stores data of the current session, which is cleared automatically when the browser is closed. Local Storage, on the other hand, retains data even when the browser window is closed.
 
-# Data Attribute
+## Data Attribute
 Data attributes allow you to assign custom data to an element to store additional information or data when no suitable HTML5 element or attribute exists.
 
-# Top 50 HTML Questions
+## Top 50 HTML Questions
 
 ## Image Map
-An image map helps link different web pages using a single image. It defines shapes in images for mapping purposes. It can also be used for linking to different sections within the same web page by using the `<a>` tag with the `#` symbol.
+An image map helps link different web pages using a single image. It defines shapes in images for mapping purposes. It can also be used for linking to different sections within the same web page by using the `<a>` tag with the `##` symbol.
 
 ## Marquee
 The `<marquee>` tag is used to set scrolling text on a webpage.
 
-# Additional Elements
+## Additional Elements
 
 ## Links
 - Email: `<a href="mailto:jack@abc.com">Email</a>`
@@ -34,7 +34,7 @@ The `<marquee>` tag is used to set scrolling text on a webpage.
 
 ## Google Maps Embed
 ```html
-<iframe title="New York" width="342" height="306" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" scrolling="no"></iframe>
+<iframe title="New York" width="342" height="306" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway" scrolling="no"></iframe>
 
 Other Elements
 <canvas>: Draws graphics via JavaScript.
@@ -50,6 +50,7 @@ Other Elements
 colspan: Specifies the number of columns a cell should span.
 headers: Identifies one or more header cells a cell is related to.
 rowspan: Specifies the number of rows a cell should span.
+
 ```html
 <form method="POST" action="api/login">
   <label for="mail">Email: </label>
@@ -81,16 +82,12 @@ rowspan: Specifies the number of rows a cell should span.
 <datalist id="list">
   <option value="Chrome">
   <option value="Firefox">
-  <option value="Internet Explorer">
-  <option value="Opera">
-  <option value="Safari">
-  <option value="Microsoft Edge">
 </datalist>
 
 <input type="text" name="?" value="?" minlength="6"	 required />
 ```
-### Input Options
+###### Input Options
 Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `checked`, `required`, `placeholder`, `autocomplete`, `autocapitalize`, `inputmode`, `list`, `maxlength`, `minlength`, `min`, `max`, `step`, `pattern`, `autofocus`, `spellcheck`, `multiple`, `accept`.
 
-### Type Options
+###### Type Options
 Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`, `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
