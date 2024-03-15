@@ -34,7 +34,7 @@ The `<marquee>` tag is used to set scrolling text on a webpage.
 
 ## Google Maps Embed
 ```html
-<iframe title="New York" width="342" height="306" id="gmap_canvas" src="https://maps.google.com/" scrolling="no"></iframe>
+<iframe title="" width="" height="" id="" src="https://maps.google.com/" scrolling="no"></iframe>
 
 Other Elements
 <canvas>: Draws graphics via JavaScript.
