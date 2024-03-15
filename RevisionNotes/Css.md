@@ -27,10 +27,12 @@ It allows you to manipulate parts of an element in a special way.
 p#id::first-letter {
     color: red;
 }
-Flexbox and Grid:
-Flexbox is a one-dimensional layout to create either a row or a column layout.
-Grid is a two-dimensional layout that can handle both row and column layout. Grid is very useful for every type of designs.
-Ways to Center an Element with CSS:
+```
+## Flexbox and Grid:
+Flexbox is a one-dimensional layout to create either a row or a column layout.   
+Grid is a two-dimensional layout that can handle both row and column layout.    
+Grid is very useful for every type of designs.  
+## Ways to Center an Element with CSS:
 ```css
 .container { 
     position: relative; 
@@ -48,12 +50,13 @@ Ways to Center an Element with CSS:
 .container { 
     display: grid; 
     place-items: center; 
-}
-Additional Selectors:
-h1 { }   
-#job-title { }   
-div.hero { }  
-div > p { }  
+}```
+## Additional Selectors:
+```css
+h1 { } : tag
+#job-title { } : id
+div.hero { } : div & class
+div > p { }  : p inside div
 #idname * : All elements inside #idname
 div.classname : Div with certain classname
 div#idname : Div with certain ID
@@ -65,7 +68,9 @@ Background Image and Animation:
 background-image: url("nyan-cat.gif");  
 animation: 300ms linear 0s infinite;
 animation: bounce 300ms linear infinite;
-Grid Layout:
+```
+## Grid Layout:
+```css
 #container {
     display: grid;
     grid: repeat(2, 60px) / auto-flow 80px;
@@ -75,16 +80,17 @@ Grid Layout:
     width: 50px;
     height: 50px;
 }
-Attribute and First Child Selector:
 /* Attribute Selector */
 div[attribute="SomeValue"] {
     background-color: red;
 }
+```
+Pseudo-elements and Child Selectors::
+```css
 /* First Child Selector */
 p:first-child {
     font-weight: bold;
 }
-Pseudo-elements and Child Selectors:
 p::after,
 p::before,
 p::first-letter,
@@ -124,8 +130,6 @@ color: unset;
 color: transparent;
 color: currentcolor; /* keyword */
 Animation Properties:
-css
-Copy code
 /* Animation Properties */
 animation:
 bounce 300ms linear 100ms infinite alternate-reverse both reverse;
