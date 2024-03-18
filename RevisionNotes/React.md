@@ -224,3 +224,21 @@ export const fetchData = () => {
 ```
 In this example, fetchData returns a function that receives dispatch and getState. Inside this function, you can dispatch actions based on async operation results, like fetching data from an API.
 To use Redux Thunk, you need to apply it as middleware when creating the Redux store.
+
+```html
+<div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+    <h1 style="color: #333; text-align: center; font-family: 'Arial', sans-serif;">Welcome to My Markdown Art Gallery</h1>
+    <div style="display: flex; justify-content: space-around;">
+        <div style="width: 150px; height: 150px; background-color: #ffa500; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+            <p style="color: #fff; font-size: 24px; font-weight: bold;">🎨</p>
+        </div>
+        <div style="width: 150px; height: 150px; background-color: #008000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+            <p style="color: #fff; font-size: 24px; font-weight: bold;">🌿</p>
+        </div>
+        <div style="width: 150px; height: 150px; background-color: #4169e1; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+            <p style="color: #fff; font-size: 24px; font-weight: bold;">🌊</p>
+        </div>
+    </div>
+    <p style="text-align: center; font-size: 18px; margin-top: 20px;">Explore the beauty of art in Markdown!</p>
+</div>
+```
