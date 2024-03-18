@@ -81,10 +81,10 @@ for (let j = 0; j < 3; j++) {
 }
 ```
 
-> all because var retains the value
-> unshift enters into ==>
-> continue keyword
-> for (let index/fruit in fruits) { console.log(index,fruit); } ==> 0 apple, 1 peach, 2 pineapple
+> all because var retains the value   
+> unshift enters into ==>   
+> continue keyword   
+> for (let index/fruit in fruits) { console.log(index,fruit); } ==> 0 apple, 1 peach, 2 pineapple   
 ```javascript
 
 // callback ex:
@@ -132,7 +132,7 @@ const {name, age} = person;
 console.log(name); // 'Tom'
 console.log(age); // '22'
 
-// delete person.age
+> delete person.age
 
 // object creation ex:
 const activity = 'Surfing';
