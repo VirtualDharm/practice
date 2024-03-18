@@ -224,32 +224,3 @@ export const fetchData = () => {
 ```
 In this example, fetchData returns a function that receives dispatch and getState. Inside this function, you can dispatch actions based on async operation results, like fetching data from an API.
 To use Redux Thunk, you need to apply it as middleware when creating the Redux store.
-
-```css
-<style>
-    .quote {
-        background-color: #f9f9f9;
-        border-left: 10px solid #ccc;
-        margin: 1.5em 10px;
-        padding: 0.5em 10px;
-        quotes: "\201C""\201D""\2018""\2019";
-    }
-
-    .quote:before {
-        color: #ccc;
-        content: open-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }
-
-    .quote p {
-        display: inline;
-    }
-</style>
-<div class="quote">
-    <p>This is a creatively styled quote block.</p>
-</div>
-```
-```
