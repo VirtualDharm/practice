@@ -241,4 +241,3 @@ To use Redux Thunk, you need to apply it as middleware when creating the Redux s
     </div>
     <p style="text-align: center; font-size: 18px; margin-top: 20px;">Explore the beauty of art in Markdown!</p>
 </div>
-```
