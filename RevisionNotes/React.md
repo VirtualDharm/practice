@@ -88,8 +88,9 @@ const MyComponent = React.memo(props =>  {
 });
 ```
 <!-- Note: If React.memo has a useState, useReducer or useContext Hook in its implementation, it will still re-render when state or context change. -->
-The more often the component renders with the same props,
-the heavier and the more computationally expensive the output is, the more chances are that component needs to be wrapped in React.memo().
+The more often the component renders with the same props,  
+the heavier and the more computationally expensive the output is,    
+the more chances are that component needs to be wrapped in React.memo().   
 * Third, Use React.Fragment to Avoid Adding Extra Nodes to the DOM React Fragments do not produce any extra elements in the DOM Fragment’s child components will be rendered without any wrapping DOM node. 
 ```javascript
 function App() {
@@ -105,18 +106,18 @@ function App() {
 Reselect is a library for building memoized selectors that is commonly used for redux.
 
 Advantages :
-> Selectors can compute derived data, allowing Redux to store the minimal possible state.
-> Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
-> Selectors are composable. They can be used as input to other selectors.
-> Re-reselect is a lightweight wrapper around Reselect to enhance selectors with deeper memoization and cache management.
+* Selectors can compute derived data, allowing Redux to store the minimal possible state.
+* Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
+* Selectors are composable. They can be used as input to other selectors.
+* Re-reselect is a lightweight wrapper around Reselect to enhance selectors with deeper memoization and cache management.
 Useful to :
-> Retain selector's cache when sequentially called with one/few different arguments
-> Join similar selectors into one
-> Share selectors with props across multiple component instances
-> Instantiate selectors on runtime
-> Enhance reselect with custom caching strategies
-> Last, Use Production Build
-> Ensure that application is bundled for production before deploying.
+* Retain selector's cache when sequentially called with one/few different arguments
+* Join similar selectors into one
+* Share selectors with props across multiple component instances
+* Instantiate selectors on runtime
+* Enhance reselect with custom caching strategies
+* Last, Use Production Build
+* Ensure that application is bundled for production before deploying.
 ### Higher-Order Components :
 It is an advanced technique in React for reusing component logic. It is a function that takes a component and returns a new component.
 ```javascript
@@ -125,10 +126,10 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 HOCs are common in third-party React libraries, such as Redux’s connect and Relay’s createFragmentContainer.
 
 HOC can be used for many use cases:
-> Conditionally rendering components.
-> Providing components with specific styles.
-> Give other components any props.
-> Showing a loader while a component waits for data.
+* Conditionally rendering components.
+* Providing components with specific styles.
+* Give other components any props.
+* Showing a loader while a component waits for data.
 ### What is children prop?
 It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.
 Pros are immutable while the state is mutable. Both of them can update themselves easily.
