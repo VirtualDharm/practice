@@ -17,7 +17,9 @@ Data attributes allow you to assign custom data to an element to store additiona
 ## Top 50 HTML Questions
 
 ## Image Map
-An image map helps link different web pages using a single image. It defines shapes in images for mapping purposes. It can also be used for linking to different sections within the same web page by using the `<a>` tag with the `##` symbol.
+Using a single image, image map helps link different web pages .     
+It defines shapes in images for mapping purposes.      
+To link different sections within the same web page by using the `<a>` tag with the `##` symbol.  
 
 ## Marquee
 The `<marquee>` tag is used to set scrolling text on a webpage.
@@ -33,8 +35,7 @@ The `<marquee>` tag is used to set scrolling text on a webpage.
 `<img loading="lazy" src="https://xxx.png" width="400" height="400">`
 
 ## Google Maps Embed
-```html
-<iframe title="" width="" height="" id="" src="https://maps.google.com/" scrolling="no"></iframe>
+`<iframe title="" width="" height="" id="" src="https://maps.google.com/" scrolling="no"></iframe>`
 
 Other Elements
 <canvas>: Draws graphics via JavaScript.
@@ -47,9 +48,9 @@ Other Elements
 <track>: Text tracks for the media elements.
 <bdi>: Isolates text.
 <colgroup>: Defines a group of columns.
-colspan: Specifies the number of columns a cell should span.
 headers: Identifies one or more header cells a cell is related to.
 rowspan: Specifies the number of rows a cell should span.
+colspan: Specifies the number of columns a cell should span.
 
 ```html
 <form method="POST" action="api/login">

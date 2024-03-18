@@ -1,6 +1,7 @@
 <!-- css.md -->
 ## CSS Sprites:
-Combine multiple images into one single larger image. This would only require one server request resulting in a faster loading time. Without CSS sprites, each image will send out individual server requests.
+Combine multiple images into one single larger image.   
+This would only require one server request resulting in a faster loading time.   Without CSS sprites, each image will send out individual server requests.
 
 ## !important:
 It is used to provide more weight.
@@ -29,9 +30,9 @@ p#id::first-letter {
 }
 ```
 ## Flexbox and Grid:
-Flexbox is a one-dimensional layout to create either a row or a column layout.   
-Grid is a two-dimensional layout that can handle both row and column layout.    
-Grid is very useful for every type of designs.  
+> Flexbox is a one-dimensional layout to create either a row or a column layout.     
+> Grid is a two-dimensional layout that can handle both row and column layout.      
+> Grid is very useful for every type of designs.    
 ## Ways to Center an Element with CSS:
 ```css
 .container { 
@@ -50,7 +51,8 @@ Grid is very useful for every type of designs.
 .container { 
     display: grid; 
     place-items: center; 
-}```
+}
+```
 ## Additional Selectors:
 ```css
 h1 { } : tag
@@ -85,7 +87,7 @@ div[attribute="SomeValue"] {
     background-color: red;
 }
 ```
-Pseudo-elements and Child Selectors::
+## Pseudo-elements and Child Selectors::
 ```css
 /* First Child Selector */
 p:first-child {
@@ -128,7 +130,7 @@ color: inherit;
 color: initial;
 color: unset;
 color: transparent;
-color: currentcolor; /* keyword */
+color: currentcolor;
 Animation Properties:
 /* Animation Properties */
 animation:
