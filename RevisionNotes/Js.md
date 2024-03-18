@@ -132,7 +132,7 @@ const {name, age} = person;
 console.log(name); // 'Tom'
 console.log(age); // '22'
 
-> delete person.age
+// delete person.age
 
 // object creation ex:
 const activity = 'Surfing';

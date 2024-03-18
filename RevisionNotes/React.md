@@ -1,70 +1,80 @@
-# React :
-* open-source, JavaScript frontend library, facebook, component based approach to create complicated, interactive web and mobile user interface, single-page applications.
-# Advantages of React :
-* Virtual DOM which is blazing fast, JSX(React.createElement()), client & server side rendering, Simple to integrate with other frameworks since it is only a view library, easy to write unit tests.
-# DOM: Document Object Model: Update on virtual DOM is cheaper and faster than updating the actual DOM.
-# Components encapsulate reusable pieces of functionality or UI which are typically composed of elements but provide a higher level of abstraction and modularity in building web applications.
-# Fragments :
-they let you group a list of children without adding extra nodes to the DOM because fragments are not rendered to the DOM.
-# Props are arguments passed into React components. It contains data coming down from a parent component to a child component.
-# "key" prop :
-Keys help react identify which elements were added, changed or updated, and removed by using diffing algo using index
-# Lifecycle methods :
-they are special methods that allow you to hook into different stages of a component's lifecycle:
-# Mounting phase:
-* constructor(): Initializes state and binds event handlers.
-* render(): Renders the component's UI.
-* componentDidMount(): Executes after the component is mounted in the DOM. Used for data fetching and other side effects.
-# Updating phase:
-* shouldComponentUpdate(): Determines if the component should re-render.
-* componentDidUpdate(): Executes after the component is updated in the DOM. Useful for post-update side effects.
-# Unmounting phase:
-* componentWillUnmount(): Executes just before the component is unmounted. Used for cleanup tasks like removing event listeners.
-These methods help manage component behavior throughout its lifecycle, facilitating tasks such as initialization, rendering, updating, and cleanup.
-# Controlled Component : 
-Receives its value through props and notifies changes through callbacks.
-# Uncontrolled Component : 
-Manages its own state internally and directly interacts with the DOM for data retrieval.
-# use of refs : 
-The ref is used to return a reference to the element. They can be useful when you need direct access to the DOM element or an instance of a component. 
-# React Hooks : 
-they are a new addition in React version 16.8. They let you use state and other React features without converting functional components to a class.
+<!-- react.js -->
+### React
+React is an open-source JavaScript frontend library developed by Facebook. It follows a component-based approach to create complicated and interactive web and mobile user interfaces, particularly for single-page applications.
 
-Hooks does the same job with less code and with less code means less chances of producing bugs.
+### Advantages of React:
+- **Virtual DOM:** React utilizes a virtual DOM which offers fast rendering.
+- **JSX:** JSX allows writing HTML structures in JavaScript.
+- **Client & Server-side Rendering:** React supports both client-side and server-side rendering.
+- **Integration:** It's easy to integrate React with other frameworks since it's primarily a view library.
+- **Unit Testing:** React components are easy to test.
 
-# Basic Hooks
-* useState : returns a stateful value, and a function to update it.
-* useEffect : lets us perform side effects in function components.
-* useContext : gives a simple function to access the data via value prop of the Context Provider in any child component
-# Additional Hooks
-* useReducer : state management like redux for managing state in smaller applications rather than having to reach for a third-party state management library
-* useCallback : memoizes callback functions, so they not recreated on every re-render.
-* useMemo : stores the results of expensive operations
-* useRef : lets us perform side effects in function components
-* useImperativeHandle : Used together with forwardRef which allows you to modify the ref instance that is exposed from parent components
-* useLayoutEffect : this runs synchronously immediately after React has performed all DOM mutations
-* useDebugValue : allows you to display additional, helpful information next to your custom Hooks, with optional formatting.
-# Context :
-it provides a way to pass data through component tree without having to pass props down manually at every level.
-It is designed to share data that can be considered global for a tree of React components.￼
-<!-- Note: Apply it sparingly because it makes component reuse more difficult. Consider component composition as it is often a simpler solution than context. -->
-# How to pass data between components?
-* To pass data from parent to child, use props
-* To pass data from child to parent, use callbacks
-* To pass data among siblings AND anywhere else
-    * use React’s Context API also
-    * use state management libraries for mid - big sized applications that are stateful. Example: Redux, MobX, and Recoil
-# limitations of React : Views
-# What is prop drilling and how can you avoid it?
-Prop Drilling is the process by which data is passed from one component to deeply nested components. This becomes a problem as other components will contain data that they don’t need.
-Also, It will make the components hard to maintain.
-A common approach to avoid prop drilling is to use React context and state management libraries.
-* Components that should not otherwise be aware of the data become unnecessarily complicated
-* Harder to maintain.
-# What is the use of dangerouslySetInnerHTML?
-This property is React’s replacement for using innerHTML in the browser. It will render raw HTML in a component.
-One should limit its use because it can expose users to potential cross-site scripting attacks.
-# Name a few techniques to optimize React app performance.
+### Components:
+Components in React encapsulate reusable pieces of functionality or UI. They promote a higher level of abstraction and modularity in building web applications.
+
+### Fragments:
+Fragments allow grouping a list of children without adding extra nodes to the DOM. They are not rendered to the DOM directly.
+
+### Props:
+Props are arguments passed into React components. They contain data coming down from a parent component to a child component.
+
+### Key Prop:
+The "key" prop helps React identify elements during the reconciliation process, making updates efficient.
+
+### Lifecycle Methods:
+Lifecycle methods allow hooking into different stages of a component's lifecycle.
+### Mounting phase:
+- `constructor()`: Initializes state and binds event handlers.
+- `render()`: Renders the component's UI.
+- `componentDidMount()`: Executes after mounting, used for data fetching and side effects.
+### Updating phase:
+- `shouldComponentUpdate()`: Determines if re-rendering is necessary.
+- `componentDidUpdate()`: Executes after updates, useful for post-update side effects.
+### Unmounting phase:
+- `componentWillUnmount()`: Executes before unmounting, used for cleanup tasks.
+
+### Controlled vs. Uncontrolled Components:
+- **Controlled Component:** Receives its value through props and notifies changes through callbacks.
+- **Uncontrolled Component:** Manages its own state internally and directly interacts with the DOM for data retrieval.
+
+### Refs:
+Refs are used to return a reference to the element. They are useful when direct access to the DOM element or an instance of a component is needed.
+
+### React Hooks:
+Introduced in React version 16.8, hooks allow using state and other React features without converting functional components to classes. They streamline code and reduce the likelihood of bugs.
+
+### Basic Hooks:
+- `useState`: Returns a stateful value and a function to update it.
+- `useEffect`: Performs side effects in function components.
+- `useContext`: Provides access to data via the value prop of the Context Provider in any child component.
+
+#### Additional Hooks:
+- `useReducer`: Manages state similar to Redux for smaller applications.
+- `useCallback`: Memoizes callback functions to prevent recreation on every re-render.
+- `useMemo`: Stores the results of expensive operations.
+- `useRef`: Performs side effects in function components.
+- `useImperativeHandle`: Allows modifying the ref instance exposed from parent components.
+- `useLayoutEffect`: Runs synchronously immediately after React has performed all DOM mutations.
+- `useDebugValue`: Displays additional information next to custom Hooks, with optional formatting.
+
+### Context:
+Context provides a way to pass data through the component tree without manual prop passing. It's designed for sharing global data among React components. However, it should be used sparingly due to its potential complexity and impact on component reuse.
+
+### Data Passing Between Components:
+- To pass data from parent to child, use props.
+- To pass data from child to parent, use callbacks.
+- For data sharing among siblings and elsewhere, utilize React's Context API or state management libraries like Redux, MobX, and Recoil for larger applications.
+
+### Limitations of React:
+One limitation of React is its focus on views, which may require additional libraries or patterns for managing application state and routing.
+
+### Prop Drilling:
+Prop Drilling occurs when data is passed from one component to deeply nested components, leading to unnecessarily complicated components and maintenance challenges. To avoid it, leverage React context or state management libraries.
+
+### `dangerouslySetInnerHTML`:
+This property allows rendering raw HTML in a component, replacing the use of innerHTML. However, its use should be limited due to potential security risks like cross-site scripting attacks.
+
+### How to optimize React app performance:
 * First, Use React.Suspense and React.Lazy for Lazy Loading Components. This will only load component when it is needed.
 ```javascript
 import LazyComponent from './LazyComponent';
@@ -95,19 +105,19 @@ function App() {
 Reselect is a library for building memoized selectors that is commonly used for redux.
 
 Advantages :
-* Selectors can compute derived data, allowing Redux to store the minimal possible state.
-* Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
-* Selectors are composable. They can be used as input to other selectors.
-* Re-reselect is a lightweight wrapper around Reselect to enhance selectors with deeper memoization and cache management.
+> Selectors can compute derived data, allowing Redux to store the minimal possible state.
+> Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
+> Selectors are composable. They can be used as input to other selectors.
+> Re-reselect is a lightweight wrapper around Reselect to enhance selectors with deeper memoization and cache management.
 Useful to :
-* Retain selector's cache when sequentially called with one/few different arguments
-* Join similar selectors into one
-* Share selectors with props across multiple component instances
-* Instantiate selectors on runtime
-* Enhance reselect with custom caching strategies
-* Last, Use Production Build
-* Ensure that application is bundled for production before deploying.
-# Higher-Order Components :
+> Retain selector's cache when sequentially called with one/few different arguments
+> Join similar selectors into one
+> Share selectors with props across multiple component instances
+> Instantiate selectors on runtime
+> Enhance reselect with custom caching strategies
+> Last, Use Production Build
+> Ensure that application is bundled for production before deploying.
+### Higher-Order Components :
 It is an advanced technique in React for reusing component logic. It is a function that takes a component and returns a new component.
 ```javascript
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
@@ -115,11 +125,11 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 HOCs are common in third-party React libraries, such as Redux’s connect and Relay’s createFragmentContainer.
 
 HOC can be used for many use cases:
-* Conditionally rendering components.
-* Providing components with specific styles.
-* Give other components any props.
-* Showing a loader while a component waits for data.
-# What is children prop?
+> Conditionally rendering components.
+> Providing components with specific styles.
+> Give other components any props.
+> Showing a loader while a component waits for data.
+### What is children prop?
 It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.
 Pros are immutable while the state is mutable. Both of them can update themselves easily.
 ```javascript
@@ -140,7 +150,7 @@ const App = () => {
   );
 }
 ```
-# How to pass a parameter to an event handler or callback?
+### How to pass a parameter to an event handler or callback?
 You can use an arrow function to wrap around an event handler and pass parameters:
 ```javascript
 <button onClick={() => this.handleClick(id)} /> 
@@ -150,7 +160,7 @@ const handleClick = (id) => () => {
 }; 
 <button onClick={this.handleClick(id)} />
 ```
-# Why do we need to pass a function to setState()?
+### Why do we need to pass a function to setState()?
 setState() is an asynchronous operation. React batches state changes for performance reasons. This means state may not change immediately after setState() is called.
 ```javascript
 We should not rely on the current state when calling setState() since we can't be sure what that state will be.
@@ -164,41 +174,35 @@ this.setState((prevState) => ({
   counter: prevState.counter + 1
 })) 
 ```
-# Top 50 React questions: 
-# Redux : 
-A method of handling the state (or data) of an application. it is a predictable state container for JavaScript applications, commonly used with libraries like React for building user interfaces. It helps manage the state of an application in a more organized and predictable way.
+### Top 50 React questions: 
 
-Key Concepts:
-* Store: Redux stores the entire state of your application in a single JavaScript object called the store. This makes it easy to access and manage the state from anywhere in your application.
-* Actions: Actions are plain JavaScript objects that represent "what happened" in your application. They describe the intention to change the state and are the only way to send data to the Redux store.
-* Reducers: Reducers are pure functions that specify how the application's state changes in response to actions sent to the store. They take the previous state and an action as arguments, and return the next state.
-* Dispatch: Dispatch is a method provided by the store that allows you to send actions to the Redux store. When an action is dispatched, it triggers the corresponding reducer to update the state.
+### Redux:
+Redux is a state management library for JavaScript applications, commonly used with React. It provides a predictable state container and helps manage application state in a more organized way.
 
-Workflow:
-* Action Creation: You define action creators, which are functions that create and return action objects. These action objects typically have a type field to indicate the type of action and optionally a payload field to carry data.
-* Dispatching Actions: When some event occurs in your application (like a button click), you dispatch an action using the dispatch method provided by the Redux store.
-* Reducer Handling: Reducers specify how the state should change in response to dispatched actions. They take the current state and an action as arguments, and return the next state based on the action type.
-* Updating State: The Redux store applies the reducer functions to the current state and the dispatched action, producing a new state. This new state is then stored in the Redux store, replacing the previous state.
+### Key Concepts:
+- **Store:** Redux stores the entire state of your application in a single JavaScript object called the store. This makes it easy to access and manage the state from anywhere in your application.
+- **Actions:** Actions are plain JavaScript objects that represent "what happened" in your application. They describe the intention to change the state and are the only way to send data to the Redux store.
+- **Reducers:** Reducers are pure functions that specify how the application's state changes in response to actions sent to the store. They take the previous state and an action as arguments, and return the next state.
+- **Dispatch:** Dispatch is a method provided by the store that allows you to send actions to the Redux store. When an action is dispatched, it triggers the corresponding reducer to update the state.
 
-Benefits:
-* Predictability: Redux makes state changes predictable and transparent by following strict principles and patterns.
-* Debugging: It provides powerful debugging tools, such as Redux DevTools, which allow you to track state changes over time.
-* Testability: Redux promotes writing testable code by separating state logic from presentation components.
+### Workflow:
+- **Action Creation:** You define action creators, which are functions that create and return action objects. These action objects typically have a type field to indicate the type of action and optionally a payload field to carry data.
+- **Dispatching Actions:** When some event occurs in your application (like a button click), you dispatch an action using the dispatch method provided by the Redux store.
+- **Reducer Handling:** Reducers specify how the state should change in response to dispatched actions. They take the current state and an action as arguments, and return the next state based on the action type.
+- **Updating State:** The Redux store applies the reducer functions to the current state and the dispatched action, producing a new state. This new state is then stored in the Redux store, replacing the previous state.
 
-In summary, Redux provides a centralized and predictable way to manage the state of JavaScript applications, making it easier to develop, debug, and test complex applications.
+### Benefits:
+- **Predictability:** Redux makes state changes predictable and transparent by following strict principles and patterns.
+- **Debugging:** It provides powerful debugging tools, such as Redux DevTools, which allow you to track state changes over time.
+- **Testability:** Redux promotes writing testable code by separating state logic from presentation components.
 
-# Redux Thunk :
-It is a middleware for Redux that allows you to write action creators that return functions instead of plain objects.
+### Redux Thunk:
+Redux Thunk is a middleware that enables handling asynchronous actions in Redux. It allows action creators to return functions instead of plain objects, useful for tasks like data fetching from APIs.
 
-Here's a quick breakdown:
-* What is Redux Thunk?
-Redux Thunk helps handle asynchronous actions in Redux. It lets action creators return functions instead of plain action objects.
-
-* Why use Redux Thunk?
-It's handy for tasks like fetching data from an API, where you need to wait for an async operation to complete before dispatching an action.
-
-* How does it work?
-Instead of returning an action object directly, your action creator returns a function. This function receives dispatch and getState as arguments, allowing you to dispatch actions conditionally or after async operations.
+### Key Points:
+- **What is Redux Thunk?** Redux Thunk helps handle asynchronous actions in Redux. It lets action creators return functions instead of plain action objects.
+- **Why use Redux Thunk?** It's handy for tasks like fetching data from an API, where you need to wait for an async operation to complete before dispatching an action.
+- **How does it work?** Instead of returning an action object directly, your action creator returns a function. This function receives dispatch and getState as arguments, allowing you to dispatch actions conditionally or after async operations.
 
 ```javascript
 // Action creator using Redux Thunk
