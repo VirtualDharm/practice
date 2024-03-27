@@ -55,7 +55,8 @@ It is a new addition to ES2017 which is syntactic sugar on top of promises and m
 ### AJAX:
 Send data to the server and get data without refreshing the page.
 
-### Regex:
+### Regex: 
+It is one of the most important topic that should be paid more attention: `https://quickref.me/regex`
 Regular expressions can be used to perform all types of text search and text replace operations.
 
 > Case-insensitive(i), global search(g) with optional multiline(m) support
@@ -69,7 +70,6 @@ Additional exs:
 const rocketToMars = function() {
   return 'BOOM!';
 }
-
 // Prints 3 thrice, not what we meant.
 for (var i = 0; i < 3; i++) {
   setTimeout(_ => console.log(i), 10);
@@ -80,13 +80,11 @@ for (let j = 0; j < 3; j++) {
   setTimeout(_ => console.log(j), 10);
 }
 ```
-
 > all because var retains the value   
 > unshift enters into ==>   
 > continue keyword   
 > for (let index/fruit in fruits) { console.log(index,fruit); } ==> 0 apple, 1 peach, 2 pineapple   
 ```javascript
-
 // callback ex:
 const isEven = (n) => {
   return n % 2 == 0;
@@ -267,6 +265,10 @@ Promise.all([pro1, pro2, pro3]).then((values) => {
   console.log(values);
 });
 // expected => Array [5, 44, "foo"]
+Promise.all(···)
+Promise.race(···)
+Promise.reject(···)
+Promise.resolve(···)
 ```
 ### HTTP Request ex:
 ```javascript
@@ -287,4 +289,45 @@ const getSuggestions = async () => {
     console.log(error);
   }
 };
+```
+### Run a express server
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {
+  res. send('Hello World!')
+})
+app.get('/user/:id', (req, res) => {
+  res.send('OK')
+  res.send('user' + req.params.id)
+  res.status(500).json({ error: 'message' })
+})
+app. listen(port, () => {
+  console.log(`Listening port on ${port}`)
+})
+```
+### extra code 
+```javascript
+fn(...[1, 2, 3])
+//same as fn(1, 2, 3)
+readFile('text.txt', (err, data) => {
+  ...
+})
+async function run () {
+  const user = await getUser()
+  const tweets = await getTweets(user)
+  return [user, tweets]
+}
+for (let {title, artist} of songs) {
+  ···
+}
+function* generatorFunction() {
+  yield 1;
+  yield 2;
+}
+const generator = generatorFunction();
+console.log(generator.next().value); // Output: 1
+console.log(generator.next().value); // Output: 2
+console.log(generator.next().value); // Output: undefined
 ```

@@ -5,7 +5,7 @@ React is an open-source JavaScript frontend library developed by Facebook. It fo
 ### Advantages of React:
 - **Virtual DOM:** React utilizes a virtual DOM which offers fast rendering.
 - **JSX:** JSX allows writing HTML structures in JavaScript.
-- **Client & Server-side Rendering:** React supports both client-side and server-side rendering.
+- **Client & Server-side Rendering:** React supports both rendering.
 - **Integration:** It's easy to integrate React with other frameworks since it's primarily a view library.
 - **Unit Testing:** React components are easy to test.
 
@@ -58,7 +58,9 @@ Introduced in React version 16.8, hooks allow using state and other React featur
 - `useDebugValue`: Displays additional information next to custom Hooks, with optional formatting.
 
 ### Context:
-Context provides a way to pass data through the component tree without manual prop passing. It's designed for sharing global data among React components. However, it should be used sparingly due to its potential complexity and impact on component reuse.
+Context provides a way to pass data through the component tree without manual prop passing.      
+It's designed for sharing global data among React components.     
+However, it should be used sparingly due to its potential complexity and impact on component reuse.
 
 ### Data Passing Between Components:
 - To pass data from parent to child, use props.
@@ -75,23 +77,19 @@ Prop Drilling occurs when data is passed from one component to deeply nested com
 This property allows rendering raw HTML in a component, replacing the use of innerHTML. However, its use should be limited due to potential security risks like cross-site scripting attacks.
 
 ### How to optimize React app performance:
-* First, Use React.Suspense and React.Lazy for Lazy Loading Components. This will only load component when it is needed.
+1. Use **React.Suspense** and React.Lazy for Lazy Loading Components. This will only load component when it is needed.
 ```javascript
 import LazyComponent from './LazyComponent';
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 ```
-* Second, Use React.memo for Component Memoization. React.memo is a higher order component that will render the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next 
+2. Use **React.memo** for Component Memoization. React.memo is a higher order component that will render the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next 
 ```javascript
 import React from 'react';
 const MyComponent = React.memo(props =>  {
   /* render only if the props changed */
 });
-```
-<!-- Note: If React.memo has a useState, useReducer or useContext Hook in its implementation, it will still re-render when state or context change. -->
-The more often the component renders with the same props,  
-the heavier and the more computationally expensive the output is,    
-the more chances are that component needs to be wrapped in React.memo().   
-* Third, Use React.Fragment to Avoid Adding Extra Nodes to the DOM React Fragments do not produce any extra elements in the DOM Fragment’s child components will be rendered without any wrapping DOM node. 
+```  
+3. Use **React.Fragment** to Avoid Adding Extra Nodes to the DOM React Fragments do not produce any extra elements in the DOM Fragment’s child components will be rendered without any wrapping DOM node. 
 ```javascript
 function App() {
   return (
@@ -102,22 +100,12 @@ function App() {
   );
 }
 ```
-* Fourth, Use Reselect / Re-reselect in Redux to Avoid Frequent Re-render.
-Reselect is a library for building memoized selectors that is commonly used for redux.
+4. Utilize Reselect/Re-reselect in Redux to Reduce Re-renders:
+* Enhances memoization for optimal performance.
+* Shares and joins selectors.
+* Supports runtime instantiation and custom caching.
+* Utilize Production Build for deployment.
 
-Advantages :
-* Selectors can compute derived data, allowing Redux to store the minimal possible state.
-* Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
-* Selectors are composable. They can be used as input to other selectors.
-* Re-reselect is a lightweight wrapper around Reselect to enhance selectors with deeper memoization and cache management.
-Useful to :
-* Retain selector's cache when sequentially called with one/few different arguments
-* Join similar selectors into one
-* Share selectors with props across multiple component instances
-* Instantiate selectors on runtime
-* Enhance reselect with custom caching strategies
-* Last, Use Production Build
-* Ensure that application is bundled for production before deploying.
 ### Higher-Order Components :
 It is an advanced technique in React for reusing component logic. It is a function that takes a component and returns a new component.
 ```javascript
@@ -131,8 +119,8 @@ HOC can be used for many use cases:
 * Give other components any props.
 * Showing a loader while a component waits for data.
 ### What is children prop?
-It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.
-Pros are immutable while the state is mutable. Both of them can update themselves easily.
+It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.   
+**Pros are immutable while the state is mutable**. Both of them can update themselves easily.
 ```javascript
 const MyComponent = ({title, children}) => {
   return (
@@ -224,3 +212,4 @@ export const fetchData = () => {
 ```
 In this example, fetchData returns a function that receives dispatch and getState. Inside this function, you can dispatch actions based on async operation results, like fetching data from an API.
 To use Redux Thunk, you need to apply it as middleware when creating the Redux store.
+const { avatar, username } = this.props
