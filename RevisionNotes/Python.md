@@ -91,8 +91,31 @@ mydict = thisdict.copy() #to copy dict
 pass #skips that block
 continue #skips that block
 break #comes out of that loop
+for(intialize;condition;update){
+  #statement1
+}
+#intialize
 while condition:
     #statements1
+    #update
 else: #statements2
 range(start,end,increment) #start,start+increment.......,end
+def my_function(fname,lname='E'): #definition with default parameter
+  print(fname + " C" + lname)
+my_function("A") #calling
+my_function("B","G")
+def my_function(*kids): #*args makes list[]
+  print("The youngest child is " + kids[2])
+my_function("Emil", "Tobias", "Linus")
+def myFun(**kwargs): #**ka=wargs makes dicitionary{}
+    for key, value in kwargs.items():
+        print("%s == %s" % (key, value))
+myFun(first='Geeks', mid='for', last='Geeks')
+Recursion #yeh word bahut important hai
+x = lambda a, b : a * b #lambda() input:output is a small anonymous function.
+print(x(5, 6))
+"r"-Read,"a"-Append,"w"-Write,"x"-Create,"t"-Text,"b"-Binary #file handling
+f = open("Demo.txt", "r")
+print(f.read())
+print(f.readline())
 ```
