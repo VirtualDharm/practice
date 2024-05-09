@@ -1,10 +1,8 @@
 <!-- css.md -->
 ## CSS Sprites:
 Combine multiple images into one single larger image.   
-This would only require one server request resulting in a faster loading time.   Without CSS sprites, each image will send out individual server requests.
-
-## !important:
-It is used to provide more weight.
+This would only require one server request resulting in a faster loading time.               
+Without CSS sprites, each image will send out individual server requests.
 
 ## visibility vs display:
 - `visibility: hidden` hides the element, but it occupies space and affects the layout of the document.
@@ -30,9 +28,9 @@ p#id::first-letter {
 }
 ```
 ## Flexbox and Grid:
-> Flexbox is a one-dimensional layout to create either a row or a column layout.     
-> Grid is a two-dimensional layout that can handle both row and column layout.      
-> Grid is very useful for every type of designs.    
+Flexbox is a one-dimensional layout to create either a row or a column layout.                
+Grid is a two-dimensional layout that can handle both row and column layout.               
+Grid is very useful for every type of designs.             
 ## Ways to Center an Element with CSS:
 ```css
 .container { 
@@ -57,8 +55,6 @@ p#id::first-letter {
 ```css
 h1 { } : tag
 #job-title { } : id
-div.hero { } : div & class
-div > p { }  : p inside div
 #idname * : All elements inside #idname
 div.classname : Div with certain classname
 div#idname : Div with certain ID
