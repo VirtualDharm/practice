@@ -52,7 +52,6 @@ headers: Identifies one or more header cells a cell is related to.
 rowspan: Specifies the number of rows a cell should span.
 colspan: Specifies the number of columns a cell should span.
 
-`
 <form method="POST" action="api/login">
   <label for="mail">Email: </label>
   <input type="email" id="mail" name="mail"><br/>
@@ -86,7 +85,7 @@ colspan: Specifies the number of columns a cell should span.
 </datalist>
 
 <input type="text" name="?" value="?" minlength="6"	 required />
-`
+
 ######### Input Options
 Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `checked`, `required`, `placeholder`, `autocomplete`, `autocapitalize`, `inputmode`, `list`, `maxlength`, `minlength`, `min`, `max`, `step`, `pattern`, `autofocus`, `spellcheck`, `multiple`, `accept`.
 
