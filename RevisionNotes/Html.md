@@ -85,7 +85,6 @@ Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `c
 ###### Type Options
 Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`,
  `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
-```
 
 shorthand:-
 HTML Entities: special notations &nbsp;
@@ -97,3 +96,4 @@ Image map: link different web pages together
 Marquee tag: to set scrolling
 Links: <a href="mailto:mdharm4air.fm@gmail.com">
 Lazy loading: <img loading="lazy" src="">
+```
