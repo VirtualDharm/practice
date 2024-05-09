@@ -21,24 +21,14 @@ Using a single image, image map helps link different web pages .
 It defines shapes in images for mapping purposes.      
 To link different sections within the same web page by using the `<a>` tag with the `###` symbol.  
 
-### Marquee
-The `<marquee>` tag is used to set scrolling text on a webpage.
-
-### Additional Elements
-
-### Links
+```
+Other Elements
 - Email: `<a href="mailto:jack@abc.com">Email</a>`
 - Call: `<a href="tel:+12345678">Call</a>`
 - Message: `<a href="sms:+12345678&body=ha%20ha">Msg</a>`
-
-### Image Loading
-`<img loading="lazy" src="https://xxx.png" width="400" height="400">`
-
-### Google Maps Embed
-`<iframe title="" width="" height="" id="" src="https://maps.google.com/" scrolling="no"></iframe>`
-
-```
-Other Elements
+<marquee>: used to set scrolling text on a webpage.
+<img loading="lazy" src="https://xxx.png" width="400" height="400">
+<iframe title="" src="https://maps.google.com/" scrolling="no"></iframe>
 <canvas>: Draws graphics via JavaScript.
 <audio>: Embeds a sound or an audio stream.
 <source>: Resources for the media elements.
@@ -96,3 +86,14 @@ Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `c
 Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`,
  `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
 ```
+
+shorthand:-
+HTML Entities: special notations &nbsp;
+Semantic Elements: <header>
+Meta tags: description to web crawlers
+Session vs Local storage: session is lost as it closes
+Data attributes: extra info to elements
+Image map: link different web pages together
+Marquee tag: to set scrolling
+Links: <a href="mailto:mdharm4air.fm@gmail.com">
+Lazy loading: <img loading="lazy" src="">
