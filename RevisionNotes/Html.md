@@ -37,6 +37,7 @@ The `<marquee>` tag is used to set scrolling text on a webpage.
 ### Google Maps Embed
 `<iframe title="" width="" height="" id="" src="https://maps.google.com/" scrolling="no"></iframe>`
 
+```
 Other Elements
 <canvas>: Draws graphics via JavaScript.
 <audio>: Embeds a sound or an audio stream.
@@ -86,8 +87,9 @@ colspan: Specifies the number of columns a cell should span.
 
 <input type="text" name="?" value="?" minlength="6"	 required />
 
-######### Input Options
+###### Input Options
 Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `checked`, `required`, `placeholder`, `autocomplete`, `autocapitalize`, `inputmode`, `list`, `maxlength`, `minlength`, `min`, `max`, `step`, `pattern`, `autofocus`, `spellcheck`, `multiple`, `accept`.
 
-######### Type Options
+###### Type Options
 Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`, `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
+```
