@@ -88,8 +88,11 @@ colspan: Specifies the number of columns a cell should span.
 <input type="text" name="?" value="?" minlength="6"	 required />
 
 ###### Input Options
-Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `checked`, `required`, `placeholder`, `autocomplete`, `autocapitalize`, `inputmode`, `list`, `maxlength`, `minlength`, `min`, `max`, `step`, `pattern`, `autofocus`, `spellcheck`, `multiple`, `accept`.
+Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `checked`, `required`,
+ `placeholder`, `autocomplete`, `autocapitalize`, `inputmode`, `list`, `maxlength`, `minlength`, `min`,
+ `max`, `step`, `pattern`, `autofocus`, `spellcheck`, `multiple`, `accept`.
 
 ###### Type Options
-Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`, `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
+Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`,
+ `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
 ```
