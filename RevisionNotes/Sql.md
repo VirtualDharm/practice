@@ -51,3 +51,38 @@ A database is a collection of related data that is stored and organized. A schem
 * A primary key is a chosen candidate key from many that becomes the main identifier for the table.
 * A recursive SQL query is a query that refers to its own output in order to perform additional operations. It is commonly used for hierarchical or tree-like data structures.
 * A correlated subquery is a subquery that references columns from the outer query, while a nested subquery is a subquery that is independent of the outer query.
+
+Regex in sql:
+SELECT name FROM student_tbl WHERE name REGEXP '^sa';
+Gives all the names starting with ‘sa’.Example- sam,samarth.
+REGEXP 'on$';Gives all the names ending with ‘on’.Example – norton,merton.
+REGEXP 'com ?'; Gives all the titles containing ‘com’.Example – comedy , romantic comedy.
+REGEXP 'be|ae' ; Gives all the names containing ‘be’ or ‘ae’.Example – Abel, Baer.
+REGEXP '[jz]' ;  Gives all the names containing ‘j’ or ‘z’.Example – Lorentz, Rajs.
+REGEXP '[b-g].[a]' ; Retrieve all names that contain a letter in the range of ‘b’ and ‘g’, followed by any character, followed by the letter ‘a’.Example – Tobias, sewall. Matches any single character(.)
+REGEXP '^[^jz]*$';  Gives all the names not containing ‘j’ or ‘z’. Example – nerton, sewall.
+REGEXP 'ack[[:>:]]';  Gives all the titles ending with character “ack”. Example – Black.
+REGEXP '[[:<:]]for'; Gives all the titles starting with character “for”. Example – Forgetting Sarah Marshal.
+REGEXP '[:alpha:]' ; i.e [:lower:]- lowercase character ,[:digit:] – digit characters etc. Gives all the titles containing alphabetic character only. Example – stranger things, Avengers.
+REGEXP '^[ns]' ; Gives all the names starting with ‘n’ or ‘s’. Example – nerton, sewall.
+
+
+link: https://learnsql.com/blog/25-advanced-sql-query-examples/
+RANK() OVER (ORDER BY salary DESC) as ranking  
+where Ranking = 2 
+ORDER BY ranking;
+{to get rank/row_number() of some data}
+
+PARTITION BY dept_id
+{to get data of one dept then another dept}
+
+NTILE(2) OVER (ORDER BY salary) AS someData
+where someData = 2
+{to divide data and see}
+
+CROSS JOIN , bc machood de joins ki
+
+agr values ko next column ke different row ke value se map krna ho toh self join
+
+Subquery by using in operator
+
