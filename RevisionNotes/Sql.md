@@ -86,3 +86,16 @@ agr values ko next column ke different row ke value se map krna ho toh self join
 
 Subquery by using in operator
 
+Examples:
+WITH RECURSIVE EmployeeHierarchy AS (
+    SELECT EmployeeID, Name, ManagerID, 1 AS Level
+    FROM Employees
+    WHERE ManagerID IS NULL
+    UNION ALL
+    SELECT e.EmployeeID, e.Name, e.ManagerID, eh.Level + 1
+    FROM Employees e
+    INNER JOIN EmployeeHierarchy eh ON e.ManagerID = eh.EmployeeID
+)
+SELECT EmployeeID, Name, ManagerID, Level
+FROM EmployeeHierarchy
+ORDER BY Level, EmployeeID;
