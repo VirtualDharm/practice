@@ -36,7 +36,7 @@ str[2:]  #llo_world
 str[-5:-2]#wor
 print(str.replace("H", "J")) #replace()
 print(str.split(",")) # returns ['Hello', ' World!'] split()
-escape characters # \single character, \n newline, \t Tab, x**y exponentation(2**3=8)
+# \single character, \n newline, \t Tab, x**y exponentation(2**3=8)
 
 | Collection     | Ordered | Changeable | Indexed | Allow Duplicates | Example                  |
 |----------------|---------|------------|---------|------------------|--------------------------|
