@@ -86,6 +86,97 @@ agr values ko next column ke different row ke value se map krna ho toh self join
 
 Subquery by using in operator
 
+group_concat()
+
+CASE
+    WHEN condition1 THEN result1
+    WHEN City IS NULL THEN resultN
+    ELSE result
+END as final_result;
+
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again. BASICALLY functions() in sql.
+
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+
+EXEC procedure_name;
+
+ex:
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;
+
+EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+
+The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
+BACKUP DATABASE databasename
+TO DISK = 'filepath';
+
+
+A differential back up only backs up the parts of the database that have changed since the last full database backup.
+BACKUP DATABASE databasename
+TO DISK = 'filepath'
+WITH DIFFERENTIAL;
+
+CREATE TABLE Persons (
+    PersonID int,
+    FirstName varchar(255)
+);
+
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+ALTER TABLE Customers
+ADD/DROP/RENAME Email varchar(255);
+
+
+Constraints:
+FOREIGN KEY - Prevents actions that would destroy links between tables
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+do practice of foreign key tbhi aayega: https://www.w3schools.com/sql/sql_foreignkey.asp
+
+
+CHECK - Ensures that the values in a column satisfies a specific condition
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    Age int,
+    CHECK (Age>=18)
+);
+ALTER TABLE Persons
+ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND ID='23');
+
+
+CREATE INDEX - Used to create and retrieve data from the database very quickly
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+
+CONSTRAINT UC_Person UNIQUE (ID,LastName)
+ALTER TABLE Persons
+ADD UNIQUE (ID);
+
+
+a view is used when only a SELECT statement is needed. Views should be used to store commonly-used JOIN queries and specific columns to build virtual tables of an exact set of data we want to see. Stored procedures hold the more complex logic, such as INSERT, DELETE, and UPDATE statements to automate large SQL workflows. parameters ka diff. 
+
+CREATE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil';
+
+SELECT * FROM [Brazil Customers];
+
+SQL injection is a code injection technique that might destroy your database.
+
+SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+Name ="John Doe" AND Pass ="myPass"
+Name ="" or ""="" AND Pass ="" or ""=""
+105; DROP TABLE Suppliers;
+
+
+BLOB(size) :For BLOBs (Binary Large Objects). Holds up to 65,535 bytes of data
+
 Examples:
 WITH RECURSIVE EmployeeHierarchy AS (
     SELECT EmployeeID, Name, ManagerID, 1 AS Level
@@ -99,3 +190,37 @@ WITH RECURSIVE EmployeeHierarchy AS (
 SELECT EmployeeID, Name, ManagerID, Level
 FROM EmployeeHierarchy
 ORDER BY Level, EmployeeID;
+
+prod:
+
+-- get common columns in 2 tables 
+
+select A.COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS A  join INFORMATION_SCHEMA.COLUMNS B on A.COLUMN_NAME = B.COLUMN_NAME 
+where A.TABLE_NAME = 'customer_master' and B.TABLE_NAME = 'customer_updates'; 
+
+-- get tables containing specific column name
+
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME = 'project_id';  
+
+--  regex implimentation
+
+SELECT * FROM wf_executions WHERE instance_id REGEXP '^77'; 
+
+-- length(trim()) example
+
+SELECT * FROM customer_notes WHERE LENGTH(TRIM(notes)) > 0 AND user_id IS NOT NULL group by user_id order by created_at desc;
+  
+-- example of self join
+
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B 
+WHERE A.CustomerID <> B.CustomerID AND A.City = B.City ORDER BY A.City; 
+
+--  UNION is to combine the result-set of two or more SELECT statements.
+
+SELECT 'Customer' AS Type, ContactName, City, Country FROM Customers UNION SELECT 'Supplier', ContactName, City, Country FROM Suppliers;
+
+-- Orderby 1 column asc, 1 desc
+
+SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;=
+
+IFNULL() is same as COALESCE()

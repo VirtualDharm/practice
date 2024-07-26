@@ -56,6 +56,7 @@ Introduced in React version 16.8, hooks allow using state and other React featur
 - `useImperativeHandle`: Allows modifying the ref instance exposed from parent components.
 - `useLayoutEffect`: Runs synchronously immediately after React has performed all DOM mutations.
 - `useDebugValue`: Displays additional information next to custom Hooks, with optional formatting.
+- `useHistory or useLocation` : Manages navigation and access to route history and location.
 
 ### Context:
 Context provides a way to pass data through the component tree without manual prop passing.      
