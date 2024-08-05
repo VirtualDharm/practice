@@ -1,4 +1,5 @@
 Top 50 sql questions:    
+
 types of SQL statements?
 * Definition (DDL): creating, altering, and dropping database.
 * Manipulation (DML): querying, inserting, updating, and deleting data.
