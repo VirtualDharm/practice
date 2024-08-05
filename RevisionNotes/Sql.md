@@ -1,22 +1,22 @@
-#Top 50 sql questions: 
-#types of SQL statements?
+Top 50 sql questions:    
+types of SQL statements?
 * Definition (DDL): creating, altering, and dropping database.
 * Manipulation (DML): querying, inserting, updating, and deleting data.
 * Control (DCL): controlling access to the database, granting or revoking privileges.
 
-# Primary key: Unique identifier for each record in a table, ensuring data integrity and enabling efficient retrieval.
-# Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.
-# Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.
-# DELETE to remove specific rows from a table, whereas TRUNCATE to remove all rows from a table.
-# Self-join : is useful when you want to compare rows within the same table.
+Primary key: Unique identifier for each record in a table, ensuring data integrity and enabling efficient retrieval.  
+Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.
+Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.   
+DELETE: to remove specific rows from a table, whereas TRUNCATE to remove all rows from a table.     
+Self-join : is useful when you want to compare rows within the same table.    
 
-# types of JOIN operations :
+types of JOIN operations :   
 * INNER JOIN: Returns only the matching rows from both tables.
 * LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
 * RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
 * FULL JOIN: Returns all rows from both tables.
 
-# Normalization : 
+Normalization :    
 It is the process of organizing data in a database to eliminate redundancy and dependency issues. It involves splitting tables into smaller, more manageable entities.
 
 The different normal forms are:
@@ -26,11 +26,11 @@ The different normal forms are:
 * Fourth Normal Form (4NF): Eliminates multi-valued dependencies.
 * Fifth Normal Form (5NF): Eliminates join dependencies.
 
-# Index : 
-it is a database structure that improves the speed of data retrieval operations on database tables. It allows faster searching, sorting, and filtering of data.
-# clustered index :
+Index :     
+it is a database structure that improves the speed of data retrieval operations on database tables. It allows faster searching, sorting, and filtering of data.   
+clustered index :    
 It determines the physical order of data in a table. Each table can have only one clustered index, and it is generally created on the primary key column(s).
-# Non-clustered index :
+Non-clustered index :        
 It is a separate structure from the table that contains a sorted list of selected columns. It enhances the performance of searching and filtering operations.
 
 * unique key vs primary key : allows NULL values and enforces uniqueness but does not automatically define the
@@ -42,7 +42,7 @@ primary identifier of a table.
 * transaction : is a logical unit of work that consists of one or more database operations. It ensures that all operations within the transaction are treated as a single unit, either all succeeding or all failing.
 * deadlock : is a situation where two or more transactions are unable to proceed because each is waiting for a resource held by another transaction. This can result in a perpetual wait state.
 * A function in SQL returns a value and can be invoked within SQL statements, whereas a stored procedure does not directly return a value but can execute multiple actions.
-# Database Vs Schema
+#Database Vs Schema   
 A database is a collection of related data that is stored and organized. A schema, on the other hand, is a logical container within a database that holds objects like tables, views, and procedures.
 * A data warehouse is a large repository of data collected from various sources, structured and organized to support business intelligence and reporting.
 * OLTP (Online Transaction Processing) is used for day-to-day transactional operations and focuses on real-time processing. OLAP (Online Analytical Processing) is used for complex analytical queries and focuses on historical data analysis.
