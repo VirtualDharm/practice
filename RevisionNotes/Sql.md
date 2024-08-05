@@ -1,9 +1,9 @@
 Top 50 sql questions:    
 
 types of SQL statements?
-* Definition (DDL)
-* Manipulation (DML)
-* Control (DCL)      
+Definition (DDL)
+Manipulation (DML)
+Control (DCL)      
 
 Primary key: Unique identifier for each record in a table, ensuring data integrity and enabling efficient retrieval.  
 Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.
