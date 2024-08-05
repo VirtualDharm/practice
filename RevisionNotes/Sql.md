@@ -1,9 +1,9 @@
 Top 50 sql questions:    
 
 types of SQL statements?
-* Definition (DDL): creating, altering, and dropping database.
-* Manipulation (DML): querying, inserting, updating, and deleting data.
-* Control (DCL): controlling access to the database, granting or revoking privileges.
+* Definition (DDL)
+* Manipulation (DML)
+* Control (DCL)      
 
 Primary key: Unique identifier for each record in a table, ensuring data integrity and enabling efficient retrieval.  
 Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.
