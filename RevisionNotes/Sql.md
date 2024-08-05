@@ -12,20 +12,20 @@ DELETE vs DROP: DELETE FROM table_name WHERE condition(rollback); Drop table;
 Self-join : is useful when you want to compare rows within the same table.         
 
 types of JOIN operations :   
-* INNER JOIN: Returns only the matching rows from both tables.
-* LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
-* RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
-* FULL JOIN: Returns all rows from both tables. 
+INNER JOIN: Returns only the matching rows from both tables.
+LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
+RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
+FULL JOIN: Returns all rows from both tables. 
 
 Normalization :    
 It is the process of organizing data in a database to eliminate redundancy and dependency issues. It involves splitting tables into smaller, more manageable entities.
 
 The different normal forms are:
-* First Normal Form (1NF): Eliminates duplicate rows and ensures atomicity of values.
-* Second Normal Form (2NF): Ensures that each non-key column depends on the entire primary key.
-* Third Normal Form (3NF): Ensures that each non-key column depends only on the primary key and not on other non-key columns.
-* Fourth Normal Form (4NF): Eliminates multi-valued dependencies.
-* Fifth Normal Form (5NF): Eliminates join dependencies.
+First Normal Form (1NF): Eliminates duplicate rows and ensures atomicity of values.
+Second Normal Form (2NF): Ensures that each non-key column depends on the entire primary key.
+Third Normal Form (3NF): Ensures that each non-key column depends only on the primary key and not on other non-key columns.
+Fourth Normal Form (4NF): Eliminates multi-valued dependencies.
+Fifth Normal Form (5NF): Eliminates join dependencies.
 
 Index :     
 it is a database structure that improves the speed of data retrieval operations on database tables. It allows faster searching, sorting, and filtering of data.   
