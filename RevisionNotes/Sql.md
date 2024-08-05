@@ -1,21 +1,21 @@
 Top 50 sql questions:    
 
-types of SQL statements?
-Definition (DDL)
-Manipulation (DML)
-Control (DCL)      
+types of SQL statements?     
+Definition (DDL)   
+Manipulation (DML)   
+Control (DCL)          
 
-Primary key: Unique identifier for each record in a table, ensuring data integrity and enabling efficient retrieval.  
-Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.
-Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.   
-DELETE: to remove specific rows from a table, whereas TRUNCATE to remove all rows from a table.     
-Self-join : is useful when you want to compare rows within the same table.    
+Primary key:(not null and unique) Unique identifier for each record in a table, enabling efficient retrieval.    
+Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.     
+Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.   
+DELETE vs DROP: DELETE FROM table_name WHERE condition(rollback); Drop table;
+Self-join : is useful when you want to compare rows within the same table.      
 
 types of JOIN operations :   
 * INNER JOIN: Returns only the matching rows from both tables.
 * LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
 * RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
-* FULL JOIN: Returns all rows from both tables.
+* FULL JOIN: Returns all rows from both tables. 
 
 Normalization :    
 It is the process of organizing data in a database to eliminate redundancy and dependency issues. It involves splitting tables into smaller, more manageable entities.
