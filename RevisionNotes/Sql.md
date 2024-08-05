@@ -7,9 +7,9 @@ Control (DCL)
 
 Primary key:(not null and unique) Unique identifier for each record in a table, enabling efficient retrieval.    
 Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.     
-Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.   
-DELETE vs DROP: DELETE FROM table_name WHERE condition(rollback); Drop table;
-Self-join : is useful when you want to compare rows within the same table.      
+Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.         
+DELETE vs DROP: DELETE FROM table_name WHERE condition(rollback); Drop table;       
+Self-join : is useful when you want to compare rows within the same table.         
 
 types of JOIN operations :   
 * INNER JOIN: Returns only the matching rows from both tables.
