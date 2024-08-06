@@ -2,7 +2,7 @@
 ## * Mid - Senior Level Questions and Answers
 
 ### Closure:
-Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. Closure is the concept of function returning lexical environment values. 
+Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. Closure is the concept of inner function returning lexical environment values of function they are created in. 
 ```
 function foo(outer_arg) {
     function inner(inner_arg) {
