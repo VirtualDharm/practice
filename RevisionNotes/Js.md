@@ -2,7 +2,21 @@
 ## * Mid - Senior Level Questions and Answers
 
 ### Closure:
-The inner function has access to the outer's function scope and parameters even after the outer function has returned.
+Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. Closure is the concept of function + lexical environment.
+
+function foo(outer_arg) {
+    function inner(inner_arg) {
+        return outer_arg + inner_arg;
+    }
+    return inner;
+}
+let get_func_inner = foo(5);
+console.log(get_func_inner(4));
+console.log(get_func_inner(3));
+
+Maintaining State: Closures help maintain state between events in event-driven JavaScript.
+Private Variables: You can create private variables by enclosing them within a closure.
+Callbacks and Asynchronous Code: Closures are essential for handling callbacks and asynchronous operations.
 
 ### Differences between call, apply, and bind?
 `call` and `apply` immediately call a function while `bind` creates a new function that can be invoked in the future. Arguments with `call` are passed in one by one, separated with a comma while `apply` expects an array as its argument.
