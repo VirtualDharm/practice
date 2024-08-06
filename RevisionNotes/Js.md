@@ -3,7 +3,7 @@
 
 ### Closure:
 Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. Closure is the concept of inner function returning lexical environment values of function they are created in. 
-```
+```javascript
 function foo(outer_arg) {
     function inner(inner_arg) {
         return outer_arg + inner_arg;
@@ -29,7 +29,8 @@ let HiFun = PrintName.sayHi.bind(nameObj, 42)
 HiFun()
 ```
 ### Event Loop:
-Executing JavaScript code, collecting and processing events, and executing queued sub-tasks.
+Executing JavaScript code.      
+collecting and processing events.    executing queued sub-tasks.    
 
 ### Currying Function:
 A currying function is the process of taking a function with multiple arguments and turning it into a sequence of functions each with a single argument. Curried functions are a great way to improve code reusability and functional composition.
