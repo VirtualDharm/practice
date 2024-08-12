@@ -36,7 +36,8 @@ It is the process of organizing data in a database to eliminate redundancy and d
 4NF: Eliminates multi-valued dependencies.                  
 5NF: Eliminates join dependencies.              
     
-Stored procedure : SQL statements. It can be called and executed multiple times with different parameters.     
+Stored procedure : SQL statements. It can be called and executed multiple times with different parameters.    
+```sql 
 CREATE PROCEDURE procedure_name
 AS
 sql_statement
@@ -49,7 +50,7 @@ AS
 SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
 GO;
 EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
-
+```
 A function in SQL returns a value and can be invoked within SQL statements, whereas a stored procedure does not directly return a value but can execute multiple actions.          
 View : is a virtual table derived from one or more tables. It does not store data but provides a way to present data in a customized or simplified manner.    
 Temporary table : is a physical table that is created and used temporarily within a session or a specific scope, whereas a table variable is a variable with a structure similar to a table and exists only within the scope of a user-defined function or a stored procedure.       
