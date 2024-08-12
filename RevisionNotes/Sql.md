@@ -24,18 +24,17 @@ RIGHT JOIN: Returns all rows from the right table and matching rows from the lef
 FULL JOIN: Returns all rows from both tables.       
 SELF JOIN: agr values ko next column ke different row ke value se map krna ho toh self join. it is useful when you want to compare rows within the same table.         
 
-UNION(removing duplicates) vs UNION ALL. 
+UNION(removing duplicates) vs UNION ALL.   
 UNION combines rows from two or more tables vertically, while JOIN combines columns from two or more tables horizontally based on related columns.  
 
 Normalization :    
 It is the process of organizing data in a database to eliminate redundancy and dependency issues. It involves splitting tables into smaller, more manageable entities.
 
-The different normal forms are:
-First Normal Form (1NF): Eliminates duplicate rows and ensures atomicity of values.
-Second Normal Form (2NF): Ensures that each non-key column depends on the entire primary key.
-Third Normal Form (3NF): Ensures that each non-key column depends only on the primary key and not on other non-key columns.
-Fourth Normal Form (4NF): Eliminates multi-valued dependencies.
-Fifth Normal Form (5NF): Eliminates join dependencies.
+1NF: Eliminates duplicate rows and ensures atomicity of values.       
+2NF: Ensures that each non-key column depends on the entire primary key.          
+3NF: Ensures that each non-key column depends only on the primary key and not on other non-key columns.    
+4NF: Eliminates multi-valued dependencies.                  
+5NF: Eliminates join dependencies.              
     
 Stored procedure : SQL statements. It can be called and executed multiple times with different parameters.     
 CREATE PROCEDURE procedure_name
