@@ -12,6 +12,9 @@ React is an open-source JavaScript frontend library developed by Facebook. It fo
 ### Components:
 Components in React encapsulate reusable pieces of functionality or UI. They promote a higher level of abstraction and modularity in building web applications.
 
+### Pure Components:
+React pure components are the components that do not re-render when the value of props and state has been updated with the same values. Since these components do not cause re-rendering.
+
 ### Fragments:
 Fragments allow grouping a list of children without adding extra nodes to the DOM. They are not rendered to the DOM directly.
 
