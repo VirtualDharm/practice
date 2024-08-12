@@ -18,10 +18,10 @@ REGEXP '^[^jz]*$';  Gives all the names not containing ‘j’ or ‘z’. Examp
 REGEXP '[:alpha:]' ; i.e [:lower:]- lowercase character ,[:digit:] – digit characters etc. Gives all the titles containing alphabetic character only. Example – stranger things, Avengers.   
        
 types of JOIN operations :   
-INNER JOIN: Returns only the matching rows from both tables.
-LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
-RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
-FULL JOIN: Returns all rows from both tables. 
+INNER JOIN: Returns only the matching rows from both tables.     
+LEFT JOIN: Returns all rows from the left table and matching rows from the right table.       
+RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.       
+FULL JOIN: Returns all rows from both tables.       
 SELF JOIN: agr values ko next column ke different row ke value se map krna ho toh self join. it is useful when you want to compare rows within the same table.         
 
 UNION(removing duplicates) vs UNION ALL. 
