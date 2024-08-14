@@ -24,3 +24,7 @@ ReactJS Tic-Tac-Toe (💥Passed Job Interview💥) : https://dev.to/frontendengi
 CSS Interview Question: Create Responsive Design (1 Column / 3 Column) : https://dev.to/frontendengineer/css-interview-question-create-responsive-design-1-column-3-column-264i
 CSS Interview Question: Center HTML Element (3 Approaches💥) : https://dev.to/frontendengineer/css-interview-question-center-html-element-3-approaches-58h5
 ```
+
+Crazy:
+use canvas when you want to build a game that has more than 30 fps.
+deterministic games are same outcomes everytime(basically avoid precision errors).

@@ -347,3 +347,11 @@ console.log(generator.next().value); // Output: 1
 console.log(generator.next().value); // Output: 2
 console.log(generator.next().value); // Output: undefined
 ```
+
+```javascript
+REGEX in js
+let text = "The best things in life are free";
+let pattern = /e+/; /*/pattern(quantifer)/modifier(s);*/
+let result = pattern.test(text);
+.exec vs .match vs .test 
+```
