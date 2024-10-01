@@ -1,3 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th style="background-color: #e0e0e0; padding: 8px;">Type of Revision</th>
+      <th style="background-color: #e0e0e0; padding: 8px;">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px;">Oral Revision</td>
+      <td style="padding: 8px;">1</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">Written Revision</td>
+      <td style="padding: 8px;">0</td>
+    </tr>
+  </tbody>
+</table>
+
 ```python
 guido van rossum 1991
 

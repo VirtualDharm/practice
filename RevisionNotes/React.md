@@ -1,4 +1,23 @@
 <!-- react.js -->
+<table>
+  <thead>
+    <tr>
+      <th style="background-color: #e0e0e0; padding: 8px;">Type of Revision</th>
+      <th style="background-color: #e0e0e0; padding: 8px;">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px;">Oral Revision</td>
+      <td style="padding: 8px;">1</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">Written Revision</td>
+      <td style="padding: 8px;">0</td>
+    </tr>
+  </tbody>
+</table>
+
 ### React
 React is an open-source JavaScript frontend library developed by Facebook. It follows a component-based approach to create complicated and interactive web and mobile user interfaces, particularly for single-page applications.
 
@@ -56,11 +75,13 @@ Introduced in React version 16.8, hooks allow using state and other React featur
 - `useCallback`: Memoizes callback functions to prevent recreation on every re-render.
 - `useMemo`: Stores the results of expensive operations.
 - `useRef`: Performs side effects in function components.
+  extra 
+  '''
 - `useImperativeHandle`: Allows modifying the ref instance exposed from parent components.
 - `useLayoutEffect`: Runs synchronously immediately after React has performed all DOM mutations.
 - `useDebugValue`: Displays additional information next to custom Hooks, with optional formatting.
 - `useHistory or useLocation` : Manages navigation and access to route history and location.
-
+  '''
 ### Context:
 Context provides a way to pass data through the component tree without manual prop passing.      
 It's designed for sharing global data among React components.     
@@ -122,8 +143,10 @@ HOC can be used for many use cases:
 * Providing components with specific styles.
 * Give other components any props.
 * Showing a loader while a component waits for data.
+
+- To pass data from parent to child, use props & for vice-versa use callbacks.
+
 ### What is children prop?
-It is a prop that allow us to pass components as data to other components, just like any other prop. Component tree between the component's opening tag and closing tag will be passed to that component as children prop.   
 **Pros are immutable while the state is mutable**. Both of them can update themselves easily.
 ```javascript
 const MyComponent = ({title, children}) => {
