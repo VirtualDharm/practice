@@ -240,3 +240,75 @@ export const fetchData = () => {
 In this example, fetchData returns a function that receives dispatch and getState. Inside this function, you can dispatch actions based on async operation results, like fetching data from an API.
 To use Redux Thunk, you need to apply it as middleware when creating the Redux store.
 const { avatar, username } = this.props
+
+
+react tricks:
+{isLoading && <Spinner />}
+
+const sortedData = useMemo(() => data.sort(), [data]); //memoize
+
+Debouncing Inputs with useEffect
+const [value, setValue] = useState('');
+const [debouncedValue, setDebouncedValue] = useState('');
+useEffect(() => {
+  const handler = setTimeout(() => setDebouncedValue(value), 500);
+  return () => clearTimeout(handler);
+}, [value]);
+<input value={value} onChange={(e) => setValue(e.target.value)} />
+
+custom hooks:
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(url).then(res => res.json()).then(setData);
+  }, [url]);
+  return data;
+}
+const Component = () => {
+  const data = useFetch('/api/data');
+  return <div>{data ? JSON.stringify(data) : 'Loading...'}</div>;
+};
+
+Lazy loading:
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+function App() {
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </React.Suspense>
+  );
+}
+
+To access previous state values, use useRef.
+const [count, setCount] = useState(0);
+const prevCount = useRef(count);
+useEffect(() => {
+  prevCount.current = count;
+}, [count]);
+console.log(`Previous: ${prevCount.current}, Current: ${count}`);
+
+Avoid Re-renders by Passing Functions to useCallback
+If a function doesn’t need to change, memoize it with useCallback.
+const increment = useCallback(() => setCount(count + 1), [count]);
+
+State Reducers with useReducer
+For complex state logic, useReducer can be more efficient.
+
+const initialState = { count: 0 };
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment': return { count: state.count + 1 };
+    case 'decrement': return { count: state.count - 1 };
+    default: return state;
+  }
+}
+const [state, dispatch] = useReducer(reducer, initialState);
+
+useLayoutEffect run effects after DOM updates but before paint.
+useLayoutEffect(() => {
+  console.log("Layout effect");
+}, []);
+
+Defining functions inline causes re-renders. Instead, define them outside.
+const handleClick = () => console.log("Clicked");
+<button onClick={handleClick}>Click Me</button>

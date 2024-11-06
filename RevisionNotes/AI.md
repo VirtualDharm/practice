@@ -2,7 +2,7 @@
 
 [Create a Large Language Model from Scratch with Python – Tutorial](https://www.youtube.com/watch?v=UU1WVnMk4E8)  
 [Introduction to LLMs: A Useful Handbook](https://dev.to/umairian/introduction-to-llms-a-useful-handbook-2po?context=digest)
-
+https://dev.to/composiodev/13-open-source-tools-that-will-make-you-99-more-likely-to-land-any-ai-job-3049
 ---
 
 ## Neural Networks

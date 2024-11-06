@@ -262,3 +262,33 @@ let value = array[0]; // with `noUncheckedIndexedAccess` this has the type `numb
 Definitely Typed is a community-maintained project that provides TypeScript definitions for untyped NPM packages, ensuring type safety.
 
 npm install --save-dev @types/jquery
+
+Interface vs Type
+Interface: Use interfaces when defining objects, especially when you expect objects to have a consistent shape that could benefit from inheritance or future extension.
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+Type: Use types for unions or creating more complex data structures where you don’t need extension.
+type Status = "active" | "inactive" | "pending";
+
+Prefer unknown Over any
+
+use readonly to not change data once intialized //Partial, Pick, Omit, Readonly
+interface Product {
+  readonly id: number;
+  price: number;
+}
+
+optional chaining (?.) and nullish coalescing (??)
+const userName = user?.profile?.name ?? "Guest";
+
+Enums in TypeScript allow you to define a set of named constants. 
+enum UserRole {
+  Admin = "ADMIN",
+  User = "USER",
+  Guest = "GUEST",
+}
+function assignRole(role: UserRole) {}
+
