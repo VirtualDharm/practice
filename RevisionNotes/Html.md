@@ -96,4 +96,20 @@ Image map: link different web pages together
 Marquee tag: to set scrolling
 Links: <a href="mailto:mdharm4air.fm@gmail.com">
 Lazy loading: <img loading="lazy" src="">
+
+extra:
+<tagname style="property:value;">
+<a target="_self/_blank/_parent/_top">
+onclick="document.location='default.asp'"
+to move in same file make bookmarks:
+<h2 id="C4">Chapter 4</h2>
+<a href="#C4" style="float:right;">Jump to Chapter 4</a>
+<img src="workplace.jpg" usemap="#workmap" width="400" height="379">
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" href="computer.htm">
+</map>
+<p style="background-image: url('img_girl.jpg');">
+<caption>Monthly savings</caption>
+<th rowspan/colspan="2">Name</th>
+list-style-type: none;
 ```
