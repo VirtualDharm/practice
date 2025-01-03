@@ -1,21 +1,6 @@
 <table>
-  <thead>
-    <tr>
-      <th style="background-color: #e0e0e0; padding: 8px;">Type of Revision</th>
-      <th style="background-color: #e0e0e0; padding: 8px;">Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px;">Oral Revision</td>
-      <td style="padding: 8px;">1</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px;">Written Revision</td>
-      <td style="padding: 8px;">0</td>
-    </tr>
-  </tbody>
-</table>
+  <thead><tr><th style="background-color: #e0e0e0; padding: 8px;">Type of Revision</th>
+  <tbody><tr><td style="padding: 8px;">Oral Revision</td>
 
 ```python
 guido van rossum 1991
@@ -25,7 +10,6 @@ software development
 system scripting
 mathematics
 
-clrt+back / #to comment
 # single comment
 '''A
 B
@@ -34,6 +18,15 @@ C''' #multipleline comment
 my_variable_name #snake_case
 myVariableName #camelCase
 MyVariableName #PascalCase
+
+import random
+print(random.range(9)) #to get random number between 0-10
+str="hello_world"
+len(str) #to get length of anything
+str[start:end] slicing ex: str[2:5] llo, str[:5]  hello, str[2:] llo_world, str[-5:-2] wor
+print(str.replace("H", "J"))
+print(str.split(",")) # returns ['Hello', ' World!']
+# \single character, \n newline, \t Tab, x**y exponentation(2**3=8)
 
 str="john"
 number1=9 #int
@@ -44,27 +37,15 @@ tuple=(1,)
 set={"apple",}
 dicitionary={"A":"65",}
 
-import random
-print(random.range(9)) #to get random number between 0-10
-str="hello_world"
-len(str) #to get length of anything
-str[start:end] #slicing
-str[2:5] #llo
-str[:5]  #hello
-str[2:]  #llo_world
-str[-5:-2]#wor
-print(str.replace("H", "J")) #replace()
-print(str.split(",")) # returns ['Hello', ' World!'] split()
-# \single character, \n newline, \t Tab, x**y exponentation(2**3=8)
-
 | Collection     | Ordered | Changeable | Indexed | Allow Duplicates | Example                  |
 |----------------|---------|------------|---------|------------------|--------------------------|
-| list[]         | Yes     | Yes        | Yes     | Yes              | `[1, 2, 3]`              |
-| tuple()        | Yes     | No         | Yes     | Yes              | `(1, 2, 3)`              |
-| set{}          | No      | No         | No      | No               | `{1, 2, 3}`              |
+| list[]         | Yes     | Yes        | Yes     | Yes              | `[1, 2, 2, 3]`              |
+| tuple()        | Yes     | No         | Yes     | Yes              | `(1, 2, 2, 3)`              |
+| set{}          | No      | No         | No      | No               | `{1, 2, 3, 0}`              |
 | dictionary{}   | Yes     | Yes        | Yes     | No               | `{'key1': 'value1'}`     |
 
-thislist = ["apple", "banana", "cherry"] #list
+#list
+thislist = ["apple", "banana", "cherry"]
 thislist.insert(2, "watermelon") #insert()
 thislist.remove("banana") #remove()
 thislist.pop(1) #pop()
@@ -74,7 +55,11 @@ thislist.sort() #sort list
 thislist.reverse() #reverse the list()
 mylist = list(thislist) #to copy list
 mylist = mylist + thislist #to join list
-thistuple = ("apple",) #tupple
+
+#tupple
+thistuple = ("apple",) 
+
+#set
 thisset = {"apple", "banana", "cherry"}
 thisset.add("orange") #add() method in set
 tropical = {"pineapple", "mango", "papaya"}
@@ -94,6 +79,8 @@ set1.intersection_update(set2) #apple it changes original set1
 set3 = set1.difference(set2) #or {'banana', 'cherry'} //set1 - set2
 set3 = set1.symmetric_difference(set2) #{'google', 'banana', 'microsoft', 'cherry'} or set1 ^ set2
 set1.symmetric_difference_update(set2) #{'google', 'banana', 'microsoft', 'cherry'} but modifies sysmmetric
+
+#dict
 thisdict.get("model") #.get() to get value in dict
 thisdict.keys() #to get all the keys
 for x in thisdict: #using loop
@@ -115,10 +102,10 @@ for(intialize;condition;update){
 }
 #intialize
 while condition:
-    #statements1
-    #update
+  #statements1
+  #update
 else: #statements2
-range(start,end,increment) #start,start+increment.......,end
+range(start,end,increment)
 def my_function(fname,lname='E'): #definition with default parameter
   print(fname + " C" + lname)
 my_function("A") #calling
@@ -130,7 +117,6 @@ def myFun(**kwargs): #**ka=wargs makes dicitionary{}
     for key, value in kwargs.items():
         print("%s == %s" % (key, value))
 myFun(first='Geeks', mid='for', last='Geeks')
-Recursion #yeh word bahut important hai
 x = lambda a, b : a * b #lambda() input:output is a small anonymous function.
 print(x(5, 6))
 "r"-Read,"a"-Append,"w"-Write,"x"-Create,"t"-Text,"b"-Binary #file handling

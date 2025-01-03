@@ -3,6 +3,20 @@
 Combine multiple images into one single larger image.   
 This would only require one server request resulting in a faster loading time.               
 Without CSS sprites, each image will send out individual server requests.
+#home {
+  width: 46px;
+  height: 44px;
+  background: url(img_navsprites.gif) 0 0;
+}
+#next {
+  width: 43px;
+  height: 44px;
+  background: url(img_navsprites.gif) -91px 0;
+}
+<body>
+<img id="home" src="img_trans.gif" width="1" height="1">
+<img id="next" src="img_trans.gif" width="1" height="1">
+</body>
 
 ## visibility vs display:
 - `visibility: hidden` hides the element, but it occupies space and affects the layout of the document.
@@ -50,37 +64,87 @@ Grid is very useful for every type of designs.
     display: grid; 
     place-items: center; 
 }
+
+Extras:
+background-attachment: fixed;
+box-sizing: border-box; //to keep box size fixed
+word-spacing: 10px;
+white-space: nowrap;
+font-family: Arial, Verdana, sans-serif;
+<i class="fas fa-cloud"></i>
+<div style="overflow-x: auto;"><table></table></div>
+static, relative, fixed to viewport, absolute to relative, sticky to user scrolling
+overflow:visible, hidden, scroll, auto
+inline (puri line lega) vs inline-block 
+Descendant (space) div p 
+Direct child (>) div > p
+Next sibling (+) div + p 
+Subsequent-sibling (~) div ~ p
+li:last-child {
+  border-right: none;
+}
+a[target]/[attribute] { or a[target="_blank"]/[attribute="value"] or [title~="flower"]/[attribute~="value"] or [class|="top"]/[attribute|="value"] hypem(-) or [class^="top"]/[attribute^="value"] start or [class$="test"]/[attribute$="value"]/[class$="test"] ends or [class*="te"]/[attribute*="value"] contains or input[type="text"]
+  background-color: yellow;
+}
+Animation:
+input[type=text] {
+  width: 130px;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus/hover {
+  width: 100%;
+}
+cursor: pointer;all-scroll;auto;cell;col-resize;context-menu;copy;crosshair;default;e-resize;ew-resize;grab;grabbing;help;move;n-resize;ne-resize;nesw-resize;ns-resize;nw-resize;nwse-resize;no-drop;none;not-allowed;pointer;progress;row-resize;s-resize;se-resize;sw-resize;text;url;w-resize;wait;zoom-in;zoom-out;
+variables in css are --myVariable:value or counters:
+body {
+  counter-reset: section;
+}
+h2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+px *	pixels (1px = 1/96th of 1in), cm,mm,in
+width: calc(100% - 100px);
+background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+hero-image: .hero-image {
+  background: url(img_man.jpg) no-repeat center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+}
+background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+CSS transforms allow you to move, rotate, scale, and skew elements.
+transform: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY());
+div { //animation
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+  animation-direction:alternate;
+}
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+-webkit-box-reflect: below 20px;
+object-fit: cover;
+object-position: 80% 100%;
+-webkit-mask-image: url(w3logo.png); //masking
+mask-image: url(w3logo.png);
+mask-repeat: no-repeat;  
+float: left;
+column-count: 3;
+--myvariable:check_it
+:root { --blue: #1e90ff; } var:(--blue)
+@media screen and (max-width: 992px) {}
+<div style="flex-grow: 4">2</div>
+<div style="flex-grow: 8">3</div>
 display: grid;
-grid-template-columns: 33% 33% 33%;
-class in html, className in react
-An HTML iframe is used to display a web page within a web page.
-<iframe name="iframe_a" height="300px" width="100%"></iframe>
-<p><a href="https://www.w3schools.com" target="iframe_a">W3</a></p>
-document.getElementById("demo").style.fontSize = "25px";
-<meta name="keywords" content="HTML, CSS, JavaScript">
-<meta http-equiv="refresh" content="30">
-non-semantic elements: <div> and <span> - Tells nothing about its content.
-semantic elements: <form>, <table>, and <article> - Clearly defines its content.
-&nbsp; space
-<select id="cars" name="cars" size="4" multiple novalidate>
-max="1979-12-31"
-<input type="text" pattern="[A-Za-z]{3}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" title="3 letter code"> //best validation
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.moveTo(0, 0);
-ctx.lineTo(200, 100);
-ctx.stroke();
-</script>
-getCurrentPosition() method is used to return the user's position.
-watchPosition()
-clearWatch()
-geolocation
-drag & drop
-localStorage.setItem("lastname", "Smith"); vs sessionStorage.clickcount session based
-A web worker is a JavaScript running in the background, without affecting the performance of the page.
-Server-Sent Events (SSE) allow a web page to get updates from a server. bole toh notification.
+grid-template-columns: auto auto auto;
+grid-column-start: 1;
+grid-column-end: 3;
+using float, flex or grid
 
 
 

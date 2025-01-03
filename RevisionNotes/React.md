@@ -1,22 +1,6 @@
 <!-- react.js -->
-<table>
-  <thead>
-    <tr>
-      <th style="background-color: #e0e0e0; padding: 8px;">Type of Revision</th>
-      <th style="background-color: #e0e0e0; padding: 8px;">Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px;">Oral Revision</td>
-      <td style="padding: 8px;">1</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px;">Written Revision</td>
-      <td style="padding: 8px;">0</td>
-    </tr>
-  </tbody>
-</table>
+
+React.JS was first used in 2011 for Facebook's Newsfeed feature. Facebook Software Engineer, Jordan Walke, created it.
 
 ### React
 React is an open-source JavaScript frontend library developed by Facebook. It follows a component-based approach to create complicated and interactive web and mobile user interfaces, particularly for single-page applications.
@@ -24,57 +8,245 @@ React is an open-source JavaScript frontend library developed by Facebook. It fo
 ### Advantages of React:
 - **Virtual DOM:** React utilizes a virtual DOM which offers fast rendering.
 - **JSX:** JSX allows writing HTML structures in JavaScript.
+const myElement = <h1>I Love JSX!</h1>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
 - **Client & Server-side Rendering:** React supports both rendering.
 - **Integration:** It's easy to integrate React with other frameworks since it's primarily a view library.
 - **Unit Testing:** React components are easy to test.
 
+import React from "react";   //react-code
+import ReactDOM from "react-dom/client";
+function Hello(props) {
+  return <h1>Hello World!</h1>;
+}
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<Hello />);
+
+<!DOCTYPE html>   //react-directly-in-html yaad ni krna hai except heading
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="mydiv"></div>
+    <script type="text/babel">
+      function Hello() {
+        return <h1>Hello World!</h1>;
+      }
+      const container = document.getElementById('mydiv');
+      const root = ReactDOM.createRoot(container);
+      root.render(<Hello />)
+    </script>
+  </body>
+</html>
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello World!</h1>
+    </div>
+  );
+}
+export default App;
+
+// After 18 version
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+document.write("<p>Sum: " + add + "</p>"); in <script> tag
+
+
 ### Components:
 Components in React encapsulate reusable pieces of functionality or UI. They promote a higher level of abstraction and modularity in building web applications.
 
+### State:
+The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.
+
 ### Pure Components:
 React pure components are the components that do not re-render when the value of props and state has been updated with the same values. Since these components do not cause re-rendering.
+
+### Controlled vs. Uncontrolled Components:
+- **Controlled Component:** Receives its value through props and notifies changes through callbacks.
+- **Uncontrolled Component:** Manages its own state internally and directly interacts with the DOM for data retrieval.
 
 ### Fragments:
 Fragments allow grouping a list of children without adding extra nodes to the DOM. They are not rendered to the DOM directly.
 
 ### Props:
 Props are arguments passed into React components. They contain data coming down from a parent component to a child component.
-
 ### Key Prop:
 The "key" prop helps React identify elements during the reconciliation process, making updates efficient.
 
-### Lifecycle Methods:
-Lifecycle methods allow hooking into different stages of a component's lifecycle.
+### Lifecycle of Components:
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases: Mounting, Updating, and Unmounting.
+
 ### Mounting phase:
-- `constructor()`: Initializes state and binds event handlers.
-- `render()`: Renders the component's UI.
+- `constructor()`: Initializes state.
+- `getDerivedStateFromProps()`: Initializes state & gets prop for methods.
+- `render()`: It is mandatory & actually puts HTML to the DOM.
 - `componentDidMount()`: Executes after mounting, used for data fetching and side effects.
+
 ### Updating phase:
-- `shouldComponentUpdate()`: Determines if re-rendering is necessary.
+- `getDerivedStateFromProps()`: Still the natural place to set the state object.
+- `shouldComponentUpdate()`: return True/False that specifies whether React should continue with the re-rendering or not.
 - `componentDidUpdate()`: Executes after updates, useful for post-update side effects.
+- `render()`: Same
+- `getSnapshotBeforeUpdate()`: You have access to the props and state before the update
+- `componentDidUpdate()`: Executes after updates, useful for post-update side effects.
+
 ### Unmounting phase:
 - `componentWillUnmount()`: Executes before unmounting, used for cleanup tasks.
 
-### Controlled vs. Uncontrolled Components:
-- **Controlled Component:** Receives its value through props and notifies changes through callbacks.
-- **Uncontrolled Component:** Manages its own state internally and directly interacts with the DOM for data retrieval.
+```javascript
+  class Header extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { favoritecolor: "red" };
+      console.log("Constructor: Initializing state.");
+    }
+    static getDerivedStateFromProps(props, state) {
+      console.log("getDerivedStateFromProps: Syncing props with state.");
+      return null; // No changes to state in this example.
+    }
+    componentDidMount() {
+      console.log("componentDidMount: Component mounted to the DOM.");
+      setTimeout(() => {
+        this.setState({ favoritecolor: "yellow" });
+      }, 1000);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+      console.log("shouldComponentUpdate: Checking if component should re-render.");
+      return true; // Allow the update
+    }
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+      console.log("getSnapshotBeforeUpdate: Capturing state before update.");
+      return prevState.favoritecolor; // Snapshot of the previous favorite color.
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+      console.log("componentDidUpdate: Component re-rendered.");
+      document.getElementById("mydiv").innerHTML =
+        `Before update, the favorite color was ${snapshot}. ` +
+        `The updated favorite is ${this.state.favoritecolor}.`;
+    }
+    componentWillUnmount() {
+      console.log("componentWillUnmount: Cleaning up before component unmounts.");
+      alert("The component named Header is about to be unmounted.");
+    }
+    render() {
+      console.log("Render: Rendering component.");
+      return (
+        <div>
+          <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+          <div id="mydiv"></div>
+        </div>
+      );
+    }
+  }
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { showHeader: true };
+    }
+    toggleHeader = () => {
+      this.setState((prevState) => ({ showHeader: !prevState.showHeader }));
+    };
+    render() {
+      return (
+        <div>
+          {this.state.showHeader && <Header />}
+          <button onClick={this.toggleHeader}>
+            {this.state.showHeader ? "Unmount Header" : "Mount Header"}
+          </button>
+        </div>
+      );
+    }
+  }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+```
+//in function based useEffect does all of that
 
-### Refs:
-Refs are used to return a reference to the element. They are useful when direct access to the DOM element or an instance of a component is needed.
+<>{ isGoal ? <MadeGoal/> : <MissedGoal/> }</>
+in list remember to give keys
+
+
+### React Router:
+to add page routing.
+ <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="*" element={<NoPage />} />
+
+### React css:
+{{}}, camelCased instead of background-color
+<h1 style={{backgroundColor: "lightblue"}}>Hello!</h1>
+The CSS inside a module is available only for the component that imported it: my-style.module.css
+Sass is a CSS pre-processor. Sass files are executed on the server and sends CSS to the browser. can use variables and other Sass functions.
 
 ### React Hooks:
 Introduced in React version 16.8, hooks allow using state and other React features without converting functional components to classes. They streamline code and reduce the likelihood of bugs.
 
+3 rules:
+Hooks can only be called inside React function components.  
+Hooks can only be called at the top level of a component.   
+Hooks cannot be conditional.    
+
 ### Basic Hooks:
 - `useState`: Returns a stateful value and a function to update it.
-- `useEffect`: Performs side effects in function components.
-- `useContext`: Provides access to data via the value prop of the Context Provider in any child component.
+    setCar(previousState => { //to save previousState of object otherwise whole object would be destroyed.
+          return { ...previousState, color: "blue" }
+        })
+
+- `useEffect`: Performs side effects in function components. Fetching data, directly updating the DOM, and timers. useEffect(<function>, <dependency>)
+    return () => clearTimeout(timer) //remember to clear memory before leaving useEffect.
+
+- `useContext`: The component at the top and bottom of the stack need access to the state. To do this without Context, we will need to pass the state as "props" through each deeply nested components. This is called "prop drilling".
+
+  Component2({ user }){ <Component3 user={user} /> }
+
+  import { createContext, useContext } from "react";
+  const UserContext = createContext();
+  <UserContext.Provider value={user}>
+  </UserContext.Provider>
+  const user = useContext(UserContext);
+
 
 #### Additional Hooks:
-- `useReducer`: Manages state similar to Redux for smaller applications.
-- `useCallback`: Memoizes callback functions to prevent recreation on every re-render.
-- `useMemo`: Stores the results of expensive operations.
 - `useRef`: Performs side effects in function components.
+  const count = useRef(0);
+  useEffect(() => {
+    count.current = count.current + 1;
+  });
+- `useReducer`: Manages state similar to Redux for smaller applications. //skibdi
+  State Reducers with useReducer
+  For complex state logic, useReducer can be more efficient.
+  const initialState = { count: 0 };
+  function reducer(state, action) {
+    switch (action.type) {
+      case 'increment': return { count: state.count + 1 };
+      case 'decrement': return { count: state.count - 1 };
+      default: return state;
+    }
+  }
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
+- `useMemo`: returns a memoized value & `useCallback`: returns a memoized function to prevent recreation on every re-render. We prefer useCallback as Every time a component re-renders, its functions get recreated it is called referential equality.
+
+- `custom hooks`:
+  function useSomeData(url) { //let's suppose fetch some data
+    return data;
+  }
+  const data = useSomeData('/api/data');
+  return <div>{data ? JSON.stringify(data) : 'Loading...'}</div>;
+
   extra 
   '''
 - `useImperativeHandle`: Allows modifying the ref instance exposed from parent components.
@@ -82,10 +254,7 @@ Introduced in React version 16.8, hooks allow using state and other React featur
 - `useDebugValue`: Displays additional information next to custom Hooks, with optional formatting.
 - `useHistory or useLocation` : Manages navigation and access to route history and location.
   '''
-### Context:
-Context provides a way to pass data through the component tree without manual prop passing.      
-It's designed for sharing global data among React components.     
-However, it should be used sparingly due to its potential complexity and impact on component reuse.
+
 
 ### Data Passing Between Components:
 - To pass data from parent to child, use props.
@@ -94,9 +263,6 @@ However, it should be used sparingly due to its potential complexity and impact 
 
 ### Limitations of React:
 One limitation of React is its focus on views, which may require additional libraries or patterns for managing application state and routing.
-
-### Prop Drilling:
-Prop Drilling occurs when data is passed from one component to deeply nested components, leading to unnecessarily complicated components and maintenance challenges. To avoid it, leverage React context or state management libraries.
 
 ### `dangerouslySetInnerHTML`:
 This property allows rendering raw HTML in a component, replacing the use of innerHTML. However, its use should be limited due to potential security risks like cross-site scripting attacks.
@@ -107,12 +273,16 @@ This property allows rendering raw HTML in a component, replacing the use of inn
 import LazyComponent from './LazyComponent';
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 ```
-2. Use **React.memo** for Component Memoization. React.memo is a higher order component that will render the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next 
+2. Use **React.memo** for Component Memoization. Before the next render, if the new props are the same, React reuses the memoized result skipping the next rendering a component. 
 ```javascript
 import React from 'react';
 const MyComponent = React.memo(props =>  {
   /* render only if the props changed */
 });
+import { memo } from "react";
+export default memo(Todos);
+const calculation = expensiveCalculation(count);
+const calculation = useMemo(() => expensiveCalculation(count), [count]);
 ```  
 3. Use **React.Fragment** to Avoid Adding Extra Nodes to the DOM React Fragments do not produce any extra elements in the DOM Fragment’s child components will be rendered without any wrapping DOM node. 
 ```javascript
@@ -256,19 +426,6 @@ useEffect(() => {
 }, [value]);
 <input value={value} onChange={(e) => setValue(e.target.value)} />
 
-custom hooks:
-function useFetch(url) {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(url).then(res => res.json()).then(setData);
-  }, [url]);
-  return data;
-}
-const Component = () => {
-  const data = useFetch('/api/data');
-  return <div>{data ? JSON.stringify(data) : 'Loading...'}</div>;
-};
-
 Lazy loading:
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 function App() {
@@ -290,19 +447,6 @@ console.log(`Previous: ${prevCount.current}, Current: ${count}`);
 Avoid Re-renders by Passing Functions to useCallback
 If a function doesn’t need to change, memoize it with useCallback.
 const increment = useCallback(() => setCount(count + 1), [count]);
-
-State Reducers with useReducer
-For complex state logic, useReducer can be more efficient.
-
-const initialState = { count: 0 };
-function reducer(state, action) {
-  switch (action.type) {
-    case 'increment': return { count: state.count + 1 };
-    case 'decrement': return { count: state.count - 1 };
-    default: return state;
-  }
-}
-const [state, dispatch] = useReducer(reducer, initialState);
 
 useLayoutEffect run effects after DOM updates but before paint.
 useLayoutEffect(() => {

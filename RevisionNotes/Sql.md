@@ -5,9 +5,10 @@ Definition (DDL)
 Manipulation (DML)   
 Control (DCL)          
 
-Primary key:(not null and unique) Unique identifier for each record in a table, enabling efficient retrieval.    
-Composite key: Primary key made up of multiple columns, uniquely identifying records in a table together.     
-Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship.         
+Primary key:(not null and unique) enabling efficient retrieval.    
+Composite key: Primary key made up of multiple columns.   
+Foreign key: Column(s) in a table referencing the primary key of another table, establishing a relationship. Prevents actions that would destroy links between tables.
+CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 DELETE vs DROP: DELETE FROM table_name WHERE condition(rollback); Drop table;
 
 Regex in sql:    
@@ -34,7 +35,8 @@ It is the process of organizing data in a database to eliminate redundancy and d
 2NF: Ensures that each non-key column depends on the entire primary key.          
 3NF: Ensures that each non-key column depends only on the primary key and not on other non-key columns.    
 4NF: Eliminates multi-valued dependencies.                  
-5NF: Eliminates join dependencies.              
+5NF: Eliminates join dependencies.
+remove duplicate rows, depend on primary, only on primary, remove multi-valued, remove joins              
     
 Stored procedure : SQL statements. It can be called and executed multiple times with different parameters.    
 ```sql 
@@ -51,11 +53,16 @@ SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
 GO;
 EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
 ```
-A function in SQL returns a value and can be invoked within SQL statements, whereas a stored procedure does not directly return a value but can execute multiple actions.          
-View : is a virtual table derived from one or more tables. It does not store data but provides a way to present data in a customized or simplified manner.    
-Temporary table : is a physical table that is created and used temporarily within a session or a specific scope, whereas a table variable is a variable with a structure similar to a table and exists only within the scope of a user-defined function or a stored procedure.       
-Trigger : is a set of SQL statements that are automatically executed in response to a specific event, such as INSERT, UPDATE, or DELETE operations on a table.       
-Transaction : is a logical unit of work that consists of one or more database operations. It ensures that all operations within the transaction are treated as a single unit, either all succeeding or all failing.       
+A function in SQL returns a value and can be invoked within SQL statements, whereas a stored procedure does not directly return a value but can execute multiple actions.
+
+View : is a virtual table derived from one or more tables. It does not store data but provides a way to present data in a customized or simplified manner.
+
+Temporary table : is a physical table that is created and used temporarily within a session or a specific scope, whereas a table variable is a variable with a structure similar to a table and exists only within the scope of a user-defined function or a stored procedure.
+
+Trigger : is a set of SQL statements that are automatically executed in response to a specific event, such as INSERT, UPDATE, or DELETE operations on a table.
+
+Transaction : is a logical unit of work that consists of one or more database operations. It ensures that all operations within the transaction are treated as a single unit, either all succeeding or all failing.
+
 Deadlock : is a situation where two or more transactions are unable to proceed because each is waiting for a resource held by another transaction. This can result in a perpetual wait state.    
 
 Subquery by using in operator.    
@@ -70,7 +77,6 @@ The BACKUP DATABASE statement is used in SQL Server to create a full back up of 
 BACKUP DATABASE databasename    
 TO DISK = 'filepath';      
 
-
 A differential back up only backs up the parts of the database that have changed since the last full database backup.      
 BACKUP DATABASE databasename      
 TO DISK = 'filepath'    
@@ -84,14 +90,6 @@ CREATE TABLE Persons (
 The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
 ALTER TABLE Customers
 ADD/DROP/RENAME Email varchar(255);
-
-
-Constraints:
-FOREIGN KEY - Prevents actions that would destroy links between tables
-A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
-FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
-do practice of foreign key tbhi aayega: https://www.w3schools.com/sql/sql_foreignkey.asp
-
 
 CHECK - Ensures that the values in a column satisfies a specific condition
 CREATE TABLE Persons (
@@ -145,9 +143,7 @@ WITH RECURSIVE EmployeeHierarchy AS (
 SELECT EmployeeID, Name, ManagerID, Level
 FROM EmployeeHierarchy
 ORDER BY Level, EmployeeID;
-
-OLTP (Online Transaction Processing) is used for day-to-day transactional operations and focuses on real-time processing.    
-OLAP (Online Analytical Processing) is used for complex analytical queries and focuses on historical data analysis.     
+     
 
 Database Vs Schema : database is a collection of related data that is stored and organized. A schema, on the other hand, is a logical container within a database that holds objects like tables, views, and procedures.        
 A data warehouse is a large repository of data collected from various sources, structured and organized to support business intelligence and reporting.              
@@ -209,3 +205,18 @@ SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;=
 IFNULL() is same as COALESCE()
 
 
+sql vs nosql
+select : find //db.posts.find({}, {_id: 0, title: 1, date: 1})
+insert : insertone
+update : updateone //db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } }, { upsert: true } ) 
+delete : deleteone
+= : $eq
+in : $in
+like : $regex
+wordsearch : $text
+where : $where
+inhouse functions sum,avg,min,max : Aggregation Pipelines $group,$limit: 1, $sort: { "accommodates": -1 }, { $match : { property_type : "House" } }, $addFields: { avgGrade: { $avg: "$grades.score" } }, $count: "totalChinese"
+
+https://www.w3schools.com/mongodb/mongodb_aggregations_lookup.php
+
+new table : $out: "properties_by_type"

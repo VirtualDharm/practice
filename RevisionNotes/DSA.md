@@ -1,6 +1,6 @@
 ***India meh 50Lakhs developers hai***
 
-###### some difference between js & py
+###### some difference between js & py & java
 ```python
 Math.floor((l+r)/2) vs (l+r)//2
 .length() vs len()
@@ -8,20 +8,32 @@ Math.floor((l+r)/2) vs (l+r)//2
 prefer this: i+=2
 [x for x in nums if x>=0] in py for filter()
 sort() returns none in py
-for i in range(1,len(nums)):
+for i in range(1,len(nums)): in py , for (String i : cars) {} in java 
 Math.max vs max
 true/false vs True/False
-array.charCodeAt(0)&String.fromCharCode(65) vs ord('a')&chr(97)
+array.charCodeAt(0)&String.fromCharCode(65)/Array.from("ABCDEFG") vs ord('a')&chr(97)
 shift is come, unshift is go
 slice(to cut) array.slice(1, 3) vs splice(to add) array.splice(2, 0, "Lemon")
 let in vs let of ka diff, in for index/of for value
 ascii code=123 is '{'
 s = s.trim();
+let text = "Please visit Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+text.indexOf("locate",15);
+let x = 9.656;
+x.toFixed(2);
+arr.includes('var');
+Math.ceil(4.2):5 rounded up Math.floor(4.9):4 rounded down
+set.methods : .has(),.add(),.values();
+map.methods : .has("apples"),.get("apples"),.set("apples", 500),.size,.delete("apples"),.clear(),
+groupBy() 
 ```
 
 ###### DSA
 in leetcode whenever we need subarrays, it is a sliding window problem
-Recursion + Memoization = Dyanmic programming
+Recursion + Memoization = Dyanmic programming          
+recursion is used to add a range of numbers together by breaking it down into the simple task. Should have breakeven cond.          
+10+(9+(8+sum(7)))         
 bactracking hai toh dfs
 
 ###### concepts

@@ -101,6 +101,7 @@ extra:
 <tagname style="property:value;">
 <a target="_self/_blank/_parent/_top">
 onclick="document.location='default.asp'"
+onClick={shoot} //in react
 to move in same file make bookmarks:
 <h2 id="C4">Chapter 4</h2>
 <a href="#C4" style="float:right;">Jump to Chapter 4</a>
@@ -112,4 +113,36 @@ to move in same file make bookmarks:
 <caption>Monthly savings</caption>
 <th rowspan/colspan="2">Name</th>
 list-style-type: none;
+extra:
+display: grid;
+grid-template-columns: 33% 33% 33%;
+class in html, className in react
+An HTML iframe is used to display a web page within a web page.
+<iframe name="iframe_a" height="300px" width="100%"></iframe>
+<p><a href="https://www.w3schools.com" target="iframe_a">W3</a></p>
+document.getElementById("demo").style.fontSize = "25px";
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta http-equiv="refresh" content="30">
+non-semantic elements: <div> and <span> - Tells nothing about its content.
+semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+&nbsp; space
+<select id="cars" name="cars" size="4" multiple novalidate>
+max="1979-12-31"
+<input type="text" pattern="[A-Za-z]{3}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" title="3 letter code"> //best validation
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, 0);
+ctx.lineTo(200, 100);
+ctx.stroke();
+</script>
+getCurrentPosition() method is used to return the user's position.
+watchPosition()
+clearWatch()
+geolocation
+drag & drop
+localStorage.setItem("lastname", "Smith"); vs sessionStorage.clickcount session based
+A web worker is a JavaScript running in the background, without affecting the performance of the page.
+Server-Sent Events (SSE) allow a web page to get updates from a server. bole toh notification.
 ```

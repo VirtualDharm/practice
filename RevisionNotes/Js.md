@@ -1,6 +1,12 @@
 <!-- js.md -->
 ## * Mid - Senior Level Questions and Answers
 
+this refers windows.doc. in "use strict" is undefined 
+
+yeh bitiwse ki zarurat kya hai
+
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
 ### Closure:
 Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. Closure is the concept of inner function returning lexical environment values of function they are created in. 
 ```javascript
@@ -22,10 +28,22 @@ Callbacks and Asynchronous Code: Closures are essential for handling callbacks a
 ### Differences between call, apply, and bind?
 `call` and `apply` immediately call a function while `bind` creates a new function that can be invoked in the future. Arguments with `call` are passed in one by one, separated with a comma while `apply` expects an array as its argument.
 
+call : ek object ke function pe another object call kr diya
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.call(person1, "Oslo", "Norway") vs .apply(person1, ["Oslo", "Norway"]) //arguments as an array.
+
 ```javascript
 let nameObj = {name: "Tony"}
-let PrintName = {name: "steve",sayHi: function (age) {console.log(this.name + " age is " + age)}}
-let HiFun = PrintName.sayHi.bind(nameObj, 42)
+let person = {name: "steve",sayHi: function (age) {console.log(this.name + " age is " + age)}}
+let HiFun = person.sayHi.bind(nameObj, 42)
 HiFun()
 ```
 ### Event Loop:
@@ -46,11 +64,11 @@ function calculateVolume(length) {
 console.log(calculateVolume(4)(5)(6));
 ```
 
-### What is prototype in JavaScript?
-Prototypes are the mechanism by which JavaScript objects inherit from another object.
-
 ### Memoization:
 By storing the result of expensive function calls and returning the cached results when the same inputs occur again for optimization.
+to avoid getting cached data: "demo_get.asp?t=" + Math.random() in url
+
+document.cookie = "username=John Doe";
 
 ### Higher-Order Function:
 It is a function that accepts another function as an argument or returns a function as a return value or both of them.
@@ -95,6 +113,10 @@ for (var i = 0; i < 3; i++) {
 for (let j = 0; j < 3; j++) {
   setTimeout(_ => console.log(j), 10);
 }
+
+(function () {
+  console.log('hello world')
+})();
 ```
 > all because var retains the value   
 > unshift enters into ==>   
@@ -111,12 +133,18 @@ let printMsg = (evenFunc, num) => {
 }
 printMsg(isEven, 4);
 
-// reduce ex:
-const numbers = [1, 2, 3, 4];
-const sum = numbers.reduce((accumulator, curVal) => {  
-  return accumulator + curVal;
+const [a,b, ...rest] = numbers 
+[firstName, lastName] = [lastName, firstName]
+for (let i = 0; i < arguments.length; i++) {}
+
+for/in : properties
+for/of : values
+
+// forEach ex:
+const numbers = [28, 77, 45, 99, 27];
+numbers.forEach(number => {  
+  console.log(number);
 });
-console.log(sum); // 10
 
 // map ex:
 const members = ["Taylor", "Donald", "Don", "Natasha", "Bobby"];
@@ -125,11 +153,18 @@ const announcements = members.map((member) => {
 });
 console.log(announcements);
 
-// forEach ex:
-const numbers = [28, 77, 45, 99, 27];
-numbers.forEach(number => {  
-  console.log(number);
+// reduce ex:
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((accumulator, curVal) => {  
+  return accumulator + curVal;
 });
+console.log(sum); // 10
+
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+function myFunction(value, index, array) {
+  return value * 2;
+}
 
 // filter ex:
 const randomNumbers = [4, 11, 42, 14, 39];
@@ -152,6 +187,14 @@ console.log(age); // '22'
 const activity = 'Surfing';
 const beach = { activity };
 console.log(beach); // { activity: 'Surfing' }
+
+Object.keys(person)
+Object.values(person)
+Object.enteries(person)
+
+### What is prototype in JavaScript?
+Prototypes are the mechanism by which we can change the object constructor. It's easy to add in new property in object named say function Person(name){this.Username=name} myMother=new Person myMother.nationality="Indian"
+Person.prototype.nationality = "English"; so now we can do myMother.nationality="Indian" // Add a new thing in object constructor 
 
 // good example of encapsulation:
 const cat = {
@@ -184,14 +227,19 @@ const mySong = new Song({
   publishDate: 1975
 });
 
-// import/export ex:
-export default function add(x,y)
-export function subtract(x,y)
-function multiply(x,y)
-function duplicate(x)
-export { multiply, duplicate }
-import add, { subtract, multiply, duplicate } from './myMath.js';
-const myMath = require('./myMath.js') => myMath.add()
+// import/export ex: 2 types named & default
+export const name = "Jesse" //named inline
+const name = "Jesse"
+const age = 40
+export { name, age } //named all in one
+import { name, age } from "./person.js";
+
+const message = () => { //default
+  return 'my name is years old.';
+};
+export default message;
+import message from "./message.js";
+Named exports must be destructured using curly braces. Default exports do not.
 ```
 ### How to Write Promises:
 
@@ -275,7 +323,7 @@ const someEvent = async () => {
 let pro1 = Promise.resolve(5);
 let pro2 = 44;
 let pro3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
+  setTimeout(resolve, 100, 'foo');/setInterval/clearTimeout/
 });
 Promise.all([pro1, pro2, pro3]).then((values) => {
   console.log(values);
@@ -363,3 +411,58 @@ let result = pattern.test(text);
 | **Pros**               | - Fastest performance due to Rust runtime <br> - Type-safe infrastructure and microservice integration <br> - Automatic local infrastructure | - Extremely lightweight and easy to deploy <br> - Great for serverless and edge computing <br> - Flexible runtime support | - Fast and built with TypeScript in mind <br> - Type-safe APIs save time and reduce bugs <br> - Good built-in support for monitoring | - Great for large, enterprise-scale applications <br> - Structured code organization simplifies maintenance <br> - Broad ecosystem and community support |
 | **Cons**               | - Heavier and more complex <br> - Learning curve due to extensive built-in features | - Limited built-in features; requires middleware <br> - Not as fast or feature-rich as Encore | - Performance overhead from JavaScript-based validation <br> - Limited compared to Encore for infrastructure management | - Steep learning curve <br> - Opinionated and potentially overkill for small projects <br> - Slower due to abstraction overhead |
 | **Best Use Cases**     | - Projects needing high performance, microservice architectures, or extensive infrastructure integration | - Lightweight projects, serverless apps, or apps deploying to multiple runtimes like Cloudflare Workers | - TypeScript-heavy projects that need speed and type safety but not extensive infrastructure management | - Large-scale, long-term projects where maintainability and modular architecture are crucial |
+
+
+let car = {type:"Fiat", model:"500", color:"white"};
+car = "Fiat";      // Changes object to string 
+that's why use const car & const means refference point will remain same
+
+why arrow () : they dont have this & better syntax, why classes over functions : they are not hoisted.
+method with static keyword can be called by functions not by their objects.
+document.URL,cookie,readyState,screen.availWidth,colorDepth,pixelDepth,location.href,location.assign,window.history:history.back(),history.go(-2);,history.forward(),cookieEnabled,navigator:broswer's info:appCodeName,javaEnabled,onLine,geolocation.getCurrentPosition(),watchPosition(),document.cookie=""(goes with every request),localStorage.setItem("name", "John Doe"),sessionStorage.getItem(''),
+
+document.getElementById("demo").childNodes[0].nodeValue,firstChild,lastChild,nextSibling,previousSibling, $("#id01"),$(".id01"),$("p"),$("p.intro")
+insertBefore(),remove(),parent.replaceChild(para, child),
+onload=func(),oninput,onchange,onmousedown,onmouseup,onclick
+
+addEventListener {document.getElementById("myBtn").addEventListener("click", displayDate)},
+
+Event Bubbling or Event Capturing?
+
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+
+addEventListener(event, function, useCapture='false');
+
+A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
+function startWorker() {
+  if(typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js");
+  }}
+w.terminate();
+
+
+json(faster)
+{"employees":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}
+xml 
+<employees>
+  <employee>
+    <firstName>John</firstName> <lastName>Doe</lastName>
+  </employee>
+  <employee>
+    <firstName>Anna</firstName> <lastName>Smith</lastName>
+  </employee>
+
+const text = '{"name":"John", "age":"function () {return 30;}", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.age = eval("(" + obj.age + ")"); use eval() to convert text back into functions.
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
+
+JSONP is a method for sending JSON data without worrying about cross-domain issues. JSON with Padding.
+JSONP does not use the XMLHttpRequest object. JSONP uses the <script> tag instead.
