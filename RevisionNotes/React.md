@@ -35,7 +35,7 @@ root.render(<Hello />);
     <div id="mydiv"></div>
     <script type="text/babel">
       function Hello() {
-        return ```<h1>Hello World!</h1>```;
+        return ```<h1>Hello World!<h1>```;
       }
       const container = document.getElementById('mydiv');
       const root = ReactDOM.createRoot(container);
