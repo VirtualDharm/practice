@@ -18,7 +18,7 @@ root.render(myElement);
 import React from "react";   //react-code
 import ReactDOM from "react-dom/client";
 function Hello(props) {
-  return <h1>Hello World!</h1>;
+  return ```<h1>Hello World!</h1>```;
 }
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -35,7 +35,7 @@ root.render(<Hello />);
     <div id="mydiv"></div>
     <script type="text/babel">
       function Hello() {
-        return <h1>Hello World!</h1>;
+        return ```<h1>Hello World!</h1>```;
       }
       const container = document.getElementById('mydiv');
       const root = ReactDOM.createRoot(container);
@@ -47,7 +47,7 @@ root.render(<Hello />);
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      ```<h1>Hello World!</h1>```
     </div>
   );
 }
