@@ -8,7 +8,7 @@ React is an open-source JavaScript frontend library developed by Facebook. It fo
 ### Advantages of React:
 - **Virtual DOM:** React utilizes a virtual DOM which offers fast rendering.
 - **JSX:** JSX allows writing HTML structures in JavaScript.
-const myElement = <h1>I Love JSX!</h1>;
+const myElement = '''<h1>I Love JSX!</h1>''';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement);
 - **Client & Server-side Rendering:** React supports both rendering.
