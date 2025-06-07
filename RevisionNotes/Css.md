@@ -73,13 +73,16 @@ white-space: nowrap;
 font-family: Arial, Verdana, sans-serif;
 <i class="fas fa-cloud"></i>
 <div style="overflow-x: auto;"><table></table></div>
-static, relative, fixed to viewport, absolute to relative, sticky to user scrolling
 overflow:visible, hidden, scroll, auto
-inline (puri line lega) vs inline-block 
-Descendant (space) div p 
-Direct child (>) div > p
-Next sibling (+) div + p 
-Subsequent-sibling (~) div ~ p
+h1 { } : tag
+#job-title { } : id
+#idname * : All elements inside #idname
+div.classname : Div with certain classname
+div#idname : Div with certain ID
+Descendant (space) div p : Paragraphs inside divs 
+Direct child (>) div > p : All p tags, one level deep in div
+Next sibling (+) div + p	: P tags immediately after div 
+Subsequent-sibling (~) div ~ p	: P tags preceded by div
 li:last-child {
   border-right: none;
 }
@@ -96,6 +99,7 @@ input[type=text]:focus/hover {
 }
 cursor: pointer;all-scroll;auto;cell;col-resize;context-menu;copy;crosshair;default;e-resize;ew-resize;grab;grabbing;help;move;n-resize;ne-resize;nesw-resize;ns-resize;nw-resize;nwse-resize;no-drop;none;not-allowed;pointer;progress;row-resize;s-resize;se-resize;sw-resize;text;url;w-resize;wait;zoom-in;zoom-out;
 variables in css are --myVariable:value or counters:
+:root { --blue: #1e90ff; } var:(--blue)
 body {
   counter-reset: section;
 }
@@ -103,7 +107,7 @@ h2::before {
   counter-increment: section;
   content: "Section " counter(section) ": ";
 }
-px *	pixels (1px = 1/96th of 1in), cm,mm,in
+px : pixels (1px = 1/96th of 1in), cm,mm,in
 width: calc(100% - 100px);
 background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
 hero-image: .hero-image {
@@ -127,6 +131,9 @@ div { //animation
   50%  {background-color: blue;}
   100% {background-color: green;}
 }
+animation: 300ms linear 0s infinite;
+animation: bounce 300ms linear 100ms infinite alternate-reverse both reverse;
+/* name duration timing-function delay count direction fill-mode play-state */
 -webkit-box-reflect: below 20px;
 object-fit: cover;
 object-position: 80% 100%;
@@ -135,8 +142,6 @@ mask-image: url(w3logo.png);
 mask-repeat: no-repeat;  
 float: left;
 column-count: 3;
---myvariable:check_it
-:root { --blue: #1e90ff; } var:(--blue)
 @media screen and (max-width: 992px) {}
 <div style="flex-grow: 4">2</div>
 <div style="flex-grow: 8">3</div>
@@ -145,25 +150,6 @@ grid-template-columns: auto auto auto;
 grid-column-start: 1;
 grid-column-end: 3;
 using float, flex or grid
-
-
-
-```
-## Additional Selectors:
-```css
-h1 { } : tag
-#job-title { } : id
-#idname * : All elements inside #idname
-div.classname : Div with certain classname
-div#idname : Div with certain ID
-div p : Paragraphs inside divs
-div > p : All p tags, one level deep in div
-div + p	: P tags immediately after div
-div ~ p	: P tags preceded by div
-Background Image and Animation:
-background-image: url("nyan-cat.gif");  
-animation: 300ms linear 0s infinite;
-animation: bounce 300ms linear infinite;
 ```
 ## Grid Layout:
 ```css
@@ -187,8 +173,8 @@ div[attribute="SomeValue"] {
 p:first-child {
     font-weight: bold;
 }
-p::after,
 p::before,
+p::after,
 p::first-letter,
 p::first-line,
 ::selection,
@@ -225,9 +211,4 @@ color: initial;
 color: unset;
 color: transparent;
 color: currentcolor;
-Animation Properties:
-/* Animation Properties */
-animation:
-bounce 300ms linear 100ms infinite alternate-reverse both reverse;
-/* name duration timing-function delay count direction fill-mode play-state */
 ```

@@ -3,7 +3,8 @@
 HTML entities are special codes used to represent reserved or invisible characters in HTML. They begin with an ampersand (`&`) and end with a semicolon (`;`). For example, "`<`" & "`>`", "`&nsbp`".
 
 ### Semantic Elements
-Semantic elements in HTML convey meaning about the structure and content of a webpage. Examples include `<header>`, `<article>`, and `<footer>`.
+semantic elements: <header>, <article>, <footer>, <form>, <table>, and <article> - Convey meaning about the structure and content of a webpage.
+non-semantic elements: <div> and <span> - Tells nothing about its content.
 
 ### Meta Tags
 Meta tags provide brief descriptions of webpage content to search engines and web crawlers, which use these tags to understand and categorize the content.
@@ -28,7 +29,8 @@ Other Elements
 - Message: `<a href="sms:+12345678&body=ha%20ha">Msg</a>`
 <marquee>: used to set scrolling text on a webpage.
 <img loading="lazy" src="https://xxx.png" width="400" height="400">
-<iframe title="" src="https://maps.google.com/" scrolling="no"></iframe>
+<iframe title="iframe_a" src="https://maps.google.com/" scrolling="no"></iframe>
+<p><a href="https://www.w3schools.com" target="iframe_a">W3</a></p>
 <canvas>: Draws graphics via JavaScript.
 <audio>: Embeds a sound or an audio stream.
 <source>: Resources for the media elements.
@@ -37,7 +39,7 @@ Other Elements
 <picture>: Container for multiple image sources.
 <progress>: Indicates the completion progress of a task.
 <track>: Text tracks for the media elements.
-<bdi>: Isolates text.
+<bdi>(bi-directional text also): Isolates text.
 <colgroup>: Defines a group of columns.
 headers: Identifies one or more header cells a cell is related to.
 rowspan: Specifies the number of rows a cell should span.
@@ -86,17 +88,6 @@ Input options include: `type`, `value`, `name`, `id`, `readonly`, `disabled`, `c
 Type options include: `text`, `password`, `email`, `tel`, `url`, `number`, `search`, `range`, `checkbox`,
  `radio`, `file`, `hidden`, `image`, `reset`, `button`, `submit`, `color`, `date`, `time`, `month`, `datetime-local`, `week`.
 
-shorthand:-
-HTML Entities: special notations &nbsp;
-Semantic Elements: <header>
-Meta tags: description to web crawlers
-Session vs Local storage: session is lost as it closes
-Data attributes: extra info to elements
-Image map: link different web pages together
-Marquee tag: to set scrolling
-Links: <a href="mailto:mdharm4air.fm@gmail.com">
-Lazy loading: <img loading="lazy" src="">
-
 extra:
 <tagname style="property:value;">
 <a target="_self/_blank/_parent/_top">
@@ -113,18 +104,12 @@ to move in same file make bookmarks:
 <caption>Monthly savings</caption>
 <th rowspan/colspan="2">Name</th>
 list-style-type: none;
-extra:
 display: grid;
 grid-template-columns: 33% 33% 33%;
 class in html, className in react
-An HTML iframe is used to display a web page within a web page.
-<iframe name="iframe_a" height="300px" width="100%"></iframe>
-<p><a href="https://www.w3schools.com" target="iframe_a">W3</a></p>
 document.getElementById("demo").style.fontSize = "25px";
 <meta name="keywords" content="HTML, CSS, JavaScript">
 <meta http-equiv="refresh" content="30">
-non-semantic elements: <div> and <span> - Tells nothing about its content.
-semantic elements: <form>, <table>, and <article> - Clearly defines its content.
 &nbsp; space
 <select id="cars" name="cars" size="4" multiple novalidate>
 max="1979-12-31"

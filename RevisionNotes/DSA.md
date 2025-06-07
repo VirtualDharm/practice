@@ -40,9 +40,21 @@ bactracking hai toh dfs
 abstraction: hiding unnecessary details(what we do as an SDE)
 encapsulation: capsule ki tara
 inheritance: can take use of feilds & methods
-polymorphism: to perform certain actions in different ways:- 
+polymorphism(many forms): to perform certain actions in different ways:- 
 Overloading: Same method name with different parameters in the same class. 
 Overriding: Child class redefines a method already defined in its parent class.
+
+An enum is a special "class" that represents a group of constants (unchangeable variables).
+Enums come in two flavors string and numeric.
+
+enum StatusCodes {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400
+}
+console.log(StatusCodes.NotFound); // logs 404
+console.log(StatusCodes.Success); // logs 200
 
 docker is lunch box: dal/chwaal(main code), watermelon(libraries), salad(dependencies)
 mono vs micro services: primary class teachers(all in one) vs professors(very limited)
@@ -90,3 +102,9 @@ CDN(edge servers): inh meh most watched ki copy loaded hoti hai, jisse 4 sec ka 
 escape character is \
 ```
 # Instabyte.io
+
+Lexicographically : is next dictionary word would be
+
+
+
+
