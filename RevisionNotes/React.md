@@ -8,7 +8,7 @@ React is an open-source JavaScript frontend library developed by Facebook. It fo
 ### Advantages of React:
 - **Virtual DOM:** React utilizes a virtual DOM which offers fast rendering.
 - **JSX:** JSX allows writing HTML structures in JavaScript.
-const myElement = <h1>I Love JSX!</h1>;
+const myElement = ```<h1>I Love JSX!</h1>```;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement);
 - **Client & Server-side Rendering:** React supports both rendering.
@@ -18,40 +18,11 @@ root.render(myElement);
 import React from "react";   //react-code
 import ReactDOM from "react-dom/client";
 function Hello(props) {
-  return <h1>Hello World!</h1>;
+  return ```<h1>Hello World!</h1>```;
 }
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(<Hello />);
-
-<!DOCTYPE html>   //react-directly-in-html yaad ni krna hai except heading
-<html>
-  <head>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="mydiv"></div>
-    <script type="text/babel">
-      function Hello() {
-        return <h1>Hello World!</h1>;
-      }
-      const container = document.getElementById('mydiv');
-      const root = ReactDOM.createRoot(container);
-      root.render(<Hello />)
-    </script>
-  </body>
-</html>
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  );
-}
-export default App;
 
 // After 18 version
 import ReactDOM from 'react-dom/client';
